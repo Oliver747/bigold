@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const totalImages = 10; // 假设你有 10 张头像：1.png ~ 10.png
+const totalImages = 10;
 
 export default function Home() {
   const [imageIndex, setImageIndex] = useState(1);
@@ -52,23 +52,52 @@ export default function Home() {
         />
       </div>
 
-      <button
-        onClick={handleGenerate}
-        style={{
-          padding: "12px 28px",
-          backgroundColor: "#00796b",
-          color: "white",
-          border: "none",
-          borderRadius: "8px",
-          fontSize: "16px",
-          cursor: "pointer",
-          transition: "all 0.3s ease"
-        }}
-        onMouseOver={(e) => e.target.style.backgroundColor = "#004d40"}
-        onMouseOut={(e) => e.target.style.backgroundColor = "#00796b"}
-      >
-        生成新头像
-      </button>
+      <div style={{ display: "flex", gap: "1rem" }}>
+        <button
+          onClick={handleGenerate}
+          style={{
+            padding: "12px 24px",
+            backgroundColor: "#00796b",
+            color: "white",
+            border: "none",
+            borderRadius: "8px",
+            fontSize: "16px",
+            cursor: "pointer",
+            transition: "all 0.3s ease"
+          }}
+          onMouseOver={(e) => e.target.style.backgroundColor = "#004d40"}
+          onMouseOut={(e) => e.target.style.backgroundColor = "#00796b"}
+        >
+          生成新头像
+        </button>
+
+        <a
+          href={imagePath}
+          download={`avatar-${imageIndex}.png`}
+          style={{
+            padding: "12px 24px",
+            backgroundColor: "#0288d1",
+            color: "white",
+            borderRadius: "8px",
+            fontSize: "16px",
+            textDecoration: "none",
+            lineHeight: "40px"
+          }}
+          onMouseOver={(e) => e.target.style.backgroundColor = "#01579b"}
+          onMouseOut={(e) => e.target.style.backgroundColor = "#0288d1"}
+        >
+          下载头像
+        </a>
+      </div>
+
+      <footer style={{
+        position: "fixed",
+        bottom: "10px",
+        fontSize: "14px",
+        color: "#555"
+      }}>
+        基于 Mixin 上项目 Blue Bight
+      </footer>
     </div>
   );
 }

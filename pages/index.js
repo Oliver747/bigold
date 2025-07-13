@@ -68,7 +68,7 @@ export default function Home() {
           onMouseOver={(e) => e.target.style.backgroundColor = "#004d40"}
           onMouseOut={(e) => e.target.style.backgroundColor = "#00796b"}
         >
-          生成新头像
+          生成头像
         </button>
 
         <a
@@ -96,7 +96,7 @@ export default function Home() {
         fontSize: "14px",
         color: "#555"
       }}>
-        基于 Mixin 上项目 Blue Bight
+        说明：以上头像基于 Mixin Inscription 上的 Blue Bight 项目
       </footer>
     </div>
   );

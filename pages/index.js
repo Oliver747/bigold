@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const totalImages = 2000; // 请根据你的图片数量修改此值
+const totalImages = 16; // 请根据你的图片数量修改此值
 
 export default function Home() {
   const [imageIndex, setImageIndex] = useState(1);

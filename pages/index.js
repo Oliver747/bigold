@@ -10,12 +10,12 @@ export default function Home() {
     setImageIndex(randomIndex);
   };
 
-  const imagePath = `/avatars/${imageIndex}.png`;
+  const imagePath = `/avatars/${imageIndex}.webp`;
 
   const handleDownload = () => {
     const link = document.createElement("a");
     link.href = imagePath;
-    link.download = `${imageIndex}.png`;
+    link.download = `${imageIndex}.webp`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

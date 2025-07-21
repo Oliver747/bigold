@@ -32,7 +32,8 @@ export default function Home() {
       fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"
     }}>
       <h1 style={{ fontSize: "2.5rem", marginBottom: "1rem", color: "#00796b" }}>
-        🎲 随机头像生成器
+        🎲 
+          随机头像生成器
       </h1>
 
       <div style={{
@@ -75,7 +76,7 @@ export default function Home() {
             cursor: "pointer"
           }}
         >
-          生成新头像
+          生成头像
         </button>
 
         <button

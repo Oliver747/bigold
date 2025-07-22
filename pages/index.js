@@ -24,7 +24,7 @@ export default function Home() {
   return (
     <div style={{
       minHeight: "100vh",
-      background: "linear-gradient(to bottom right, #e0f7fa, #fff)",
+      background: "linear-gradient(to bottom right, #1e3c72, #2a5298)",
       display: "flex",
       flexDirection: "column",
       alignItems: "center",

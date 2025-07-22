@@ -39,16 +39,31 @@ export default function Home() {
   };
 
   return (
-    <div style={{
-      minHeight: "80vh",
-      background: "#f2f8fc",
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      justifyContent: "center",
-      padding: "2rem",
-      fontFamily: "Segoe UI, sans-serif"
-    }}>
+    <div style={{
+    minHeight: "100vh",
+    background: "#f2f8fc",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "flex-start",
+    padding: "2rem",
+    paddingTop: "3rem",
+    fontFamily: "Segoe UI, sans-serif",
+    position: "relative" // 加这个以便定位 logo
+  }}>
+    {/* 👇 左上角 Logo */}
+    <div style={{
+      position: "absolute",
+      top: "20px",
+      left: "20px"
+    }}>
+      <img
+        src="/logo.png"
+        alt="Logo"
+        style={{ height: "40px", objectFit: "contain" }}
+      />
+    </div>
+
       <h1 style={{ fontSize: "2.2rem", color: "#00796b", marginBottom: "1rem" }}>
         随机头像生成器
       </h1>

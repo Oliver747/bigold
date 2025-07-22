@@ -71,8 +71,8 @@ export default function Home() {
 
         {/* 随机/下载按钮组 */}
 <div style={styles.buttonRow}>
-  <button onClick={handleGenerate} style={styles.mainButton("#00796b")}>🎲 Random</button>
-  <button onClick={handleDownload} style={styles.mainButton("#0097a7")}>💾 Download</button>
+  <button onClick={handleGenerate} style={styles.mainButton("#00796b")}>Randomize</button>
+  <button onClick={handleDownload} style={styles.mainButton("#0097a7")}>Download</button>
 </div>
       </div>
 
@@ -129,7 +129,7 @@ const styles = {
   },
   imageId: {
     fontWeight: "bold",
-    color: "#444",
+    color: "#fff",
     marginBottom: "1rem",
   },
   navRow: {
@@ -171,12 +171,12 @@ const styles = {
     transition: "0.2s ease",
   },
   footer: {
-    textAlign: "center",
-    fontSize: "14px",
-    color: "#555",
-    padding: "1rem",
-    borderTop: "1px solid #ccc",
-    background: "#f2f8fc",
+    textAlign: "center",
+    fontSize: "14px",
+    color: "#ffffff", // 白色文字在深色背景上更清晰
+    padding: "1rem",
+    borderTop: "1px solid rgba(255, 255, 255, 0.2)", // 半透明边框
+    background: "transparent",
     marginTop: "auto", // 保证贴底
     width: "100%", // 防止超小宽度
   },

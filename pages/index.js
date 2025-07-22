@@ -53,22 +53,6 @@ export default function Home() {
         🎲 随机头像生成器
       </h1>
 
-      {/* 上一个 / 下一个按钮 */}
-      <div style={{ display: "flex", gap: "1rem", marginBottom: "1rem" }}>
-        <button onClick={goBack} style={navButtonStyle} disabled={currentIndex === 0}>
-          ⬅ 上一个
-        </button>
-        <button onClick={goForward} style={navButtonStyle} disabled={currentIndex === history.length - 1}>
-          下一个 ➡
-        </button>
-      </div>
-
-      {/* 随机生成 / 下载 */}
-      <div style={{ display: "flex", gap: "1rem", marginBottom: "1rem" }}>
-        <button onClick={handleGenerate} style={mainButtonStyle("#00796b")}>🎲 随机生成</button>
-        <button onClick={handleDownload} style={mainButtonStyle("#0097a7")}>⬇️ 下载头像</button>
-      </div>
-
       {/* 图片区域 */}
       <div style={{
         width: 220,
@@ -90,8 +74,26 @@ export default function Home() {
       </div>
 
       <p style={{ fontWeight: "bold", color: "#444", marginBottom: "1.5rem" }}>
-        当前编号：#{currentImage}
+        编号：#{currentImage}
       </p>
+
+{/* 上一个 / 下一个按钮 */}
+      <div style={{ display: "flex", gap: "1rem", marginBottom: "1rem" }}>
+        <button onClick={goBack} style={navButtonStyle} disabled={currentIndex === 0}>
+          ⬅ 上一个
+        </button>
+        <button onClick={goForward} style={navButtonStyle} disabled={currentIndex === history.length - 1}>
+          下一个 ➡
+        </button>
+      </div>
+
+      {/* 随机生成 / 下载 */}
+      <div style={{ display: "flex", gap: "1rem", marginBottom: "1rem" }}>
+        <button onClick={handleGenerate} style={mainButtonStyle("#00796b")}>🎲 随机生成</button>
+        <button onClick={handleDownload} style={mainButtonStyle("#0097a7")}>⬇️ 下载头像</button>
+      </div>
+
+      
 
       <footer style={{ fontSize: "14px", color: "#555" }}>
         说明：头像来自 Mixin Inscription 上的 Blue Bight 项目

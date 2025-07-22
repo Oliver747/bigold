@@ -78,14 +78,14 @@ export default function Home() {
             disabled={currentIndex === 0}
             style={styles.navButton}
           >
-            ⬅️ Prev
+            Prev
           </button>
           <button
             onClick={goForward}
             disabled={currentIndex === history.length - 1}
             style={styles.navButton}
           >
-            Next ➡️
+            Next
           </button>
         </div>
 
@@ -187,7 +187,9 @@ const styles = {
     cursor: "pointer",
     fontWeight: "bold",
     fontSize: "16px",
-    minWidth: "80px",
+    minWidth: "100px", // ✅ 稍微减小，避免换行
+  height: "42px", // ✅ 强制高度
+  whiteSpace: "nowrap", // ✅ 防止换行
     transition: "0.2s ease",
   }),
   navButton: {
@@ -198,7 +200,9 @@ const styles = {
     borderRadius: "8px",
     fontWeight: "bold",
     fontSize: "16px",
-    width: "130px", // 强制对齐
+    width: "100px", // 统一宽度
+  height: "42px", // ✅ 强制高度，避免内容多换行
+  whiteSpace: "nowrap", // ✅ 防止文字换行
   textAlign: "center",
     cursor: "pointer",
     transition: "0.2s ease",

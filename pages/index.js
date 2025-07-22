@@ -40,7 +40,7 @@ export default function Home() {
 
   return (
     <div style={{
-      minHeight: "100vh",
+      minHeight: "80vh",
       background: "#f2f8fc",
       display: "flex",
       flexDirection: "column",
@@ -50,7 +50,7 @@ export default function Home() {
       fontFamily: "Segoe UI, sans-serif"
     }}>
       <h1 style={{ fontSize: "2.2rem", color: "#00796b", marginBottom: "1rem" }}>
-        🎲 随机头像生成器
+        随机头像生成器
       </h1>
 
       {/* 图片区域 */}
@@ -80,10 +80,10 @@ export default function Home() {
 {/* 上一个 / 下一个按钮 */}
       <div style={{ display: "flex", gap: "1rem", marginBottom: "1rem" }}>
         <button onClick={goBack} style={navButtonStyle} disabled={currentIndex === 0}>
-          ⬅ 上一张
+          ⬅️ 上一张
         </button>
         <button onClick={goForward} style={navButtonStyle} disabled={currentIndex === history.length - 1}>
-          下一张 ➡
+          下一张 ➡️
         </button>
       </div>
 

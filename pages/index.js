@@ -102,12 +102,13 @@ export default function Home() {
 
 const styles = {
   container: {
-    minHeight: "100vh",
-    display: "flex",
-    flexDirection: "column",
-    background: "#f2f8fc",
-    fontFamily: "Segoe UI, sans-serif",
-  },
+  minHeight: "100vh",
+  display: "flex",
+  flexDirection: "column",
+  background: "linear-gradient(to bottom right, #4f46e5, #9333ea)", // 蓝到紫渐变
+  fontFamily: "Segoe UI, sans-serif",
+  color: "#ffffff", // 白色文字以适配深色背景
+},
   logo: {
     position: "absolute",
     top: 20,

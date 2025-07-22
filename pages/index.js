@@ -173,7 +173,7 @@ const styles = {
   },
   buttonRow: {
     display: "flex",
-    flexWrap: "wrap",
+    flexWrap: "nowrap",
     gap: "1rem",
     marginBottom: "1rem",
     justifyContent: "center",
@@ -187,7 +187,7 @@ const styles = {
     cursor: "pointer",
     fontWeight: "bold",
     fontSize: "16px",
-    minWidth: "100px", // ✅ 稍微减小，避免换行
+    minWidth: "60px", // ✅ 稍微减小，避免换行
   height: "42px", // ✅ 强制高度
   whiteSpace: "nowrap", // ✅ 防止换行
     transition: "0.2s ease",
@@ -200,7 +200,7 @@ const styles = {
     borderRadius: "8px",
     fontWeight: "bold",
     fontSize: "16px",
-    width: "100px", // 统一宽度
+    width: "60px", // 统一宽度
   height: "42px", // ✅ 强制高度，避免内容多换行
   whiteSpace: "nowrap", // ✅ 防止文字换行
   textAlign: "center",

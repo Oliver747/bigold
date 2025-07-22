@@ -63,33 +63,17 @@ export default function Home() {
 
         <p style={styles.imageId}>#{currentImage}</p>
 
-        {/* 上/下一张 */}
-        <div style={styles.buttonRow}>
-          <button
-            onClick={goBack}
-            disabled={currentIndex === 0}
-            style={styles.navButton}
-          >
-            ⬅️
-          </button>
-          <button
-            onClick={goForward}
-            disabled={currentIndex === history.length - 1}
-            style={styles.navButton}
-          >
-            ➡️
-          </button>
-        </div>
+        {/* 上/下一张按钮组 */}
+<div style={styles.navRow}>
+  <button onClick={goBack} disabled={currentIndex === 0} style={styles.navButton}>⬅️</button>
+  <button onClick={goForward} disabled={currentIndex === history.length - 1} style={styles.navButton}>➡️</button>
+</div>
 
-        {/* 随机 / 下载 */}
-        <div style={styles.buttonRow}>
-          <button onClick={handleGenerate} style={styles.mainButton("#00796b")}>
-            Randomize
-          </button>
-          <button onClick={handleDownload} style={styles.mainButton("#0097a7")}>
-            Download
-          </button>
-        </div>
+        {/* 随机/下载按钮组 */}
+<div style={styles.buttonRow}>
+  <button onClick={handleGenerate} style={styles.mainButton("#00796b")}>🎲 Random</button>
+  <button onClick={handleDownload} style={styles.mainButton("#0097a7")}>💾 Download</button>
+</div>
       </div>
 
       {/* 页脚（始终贴底） */}
@@ -120,7 +104,7 @@ const styles = {
     flexDirection: "column",
     alignItems: "center",
     padding: "2rem 1rem",
-    marginTop: "4rem",
+    justifyContent: "center", // 居中内容
   },
   title: {
     fontSize: "2rem",
@@ -148,6 +132,13 @@ const styles = {
     color: "#444",
     marginBottom: "1rem",
   },
+  navRow: {
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  gap: "1.5rem",
+  marginBottom: "1rem",
+},
   buttonRow: {
     display: "flex",
     flexWrap: "wrap",
@@ -186,5 +177,7 @@ const styles = {
     padding: "1rem",
     borderTop: "1px solid #ccc",
     background: "#f2f8fc",
+    marginTop: "auto", // 保证贴底
+    width: "100%", // 防止超小宽度
   },
 };

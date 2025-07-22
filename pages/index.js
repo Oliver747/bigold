@@ -61,7 +61,7 @@ export default function Home() {
           />
         </div>
 
-        <p style={styles.imageId}>NO.：#{currentImage}</p>
+        <p style={styles.imageId}>#{currentImage}</p>
 
         {/* 上/下一张 */}
         <div style={styles.buttonRow}>

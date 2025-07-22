@@ -65,7 +65,7 @@ export default function Home() {
     </div>
 
       <h1 style={{ fontSize: "2.2rem", color: "#00796b", marginBottom: "1rem" }}>
-        随机头像生成器
+        
       </h1>
 
       {/* 图片区域 */}

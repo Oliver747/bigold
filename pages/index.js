@@ -40,10 +40,14 @@ export default function Home() {
 
   return (
     <div style={{
+    minHeight: "120vh",
+    background: "#f2f8fc",
     display: "flex",
     flexDirection: "column",
-    minHeight: "100vh",
-    background: "#f2f8fc",
+    alignItems: "center",
+    justifyContent: "flex-start",
+    padding: "2rem",
+    paddingTop: "3rem",
     fontFamily: "Segoe UI, sans-serif",
     position: "relative" // 加这个以便定位 logo
   }}>

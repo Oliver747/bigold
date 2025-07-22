@@ -187,7 +187,7 @@ const styles = {
     cursor: "pointer",
     fontWeight: "bold",
     fontSize: "16px",
-    minWidth: "110px",
+    minWidth: "80px",
     transition: "0.2s ease",
   }),
   navButton: {

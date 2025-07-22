@@ -40,7 +40,7 @@ export default function Home() {
 
   return (
     <div style={{
-    minHeight: "100vh",
+    minHeight: "120vh",
     background: "#f2f8fc",
     display: "flex",
     flexDirection: "column",
@@ -67,6 +67,7 @@ export default function Home() {
       <h1 style={{ fontSize: "2.2rem", color: "#00796b", marginBottom: "1rem" }}>
         
       </h1>
+
 
       {/* 图片区域 */}
       <div style={{
@@ -109,6 +110,11 @@ export default function Home() {
       </div>
 
       
+
+
+
+
+
 
       <footer style={{ fontSize: "14px", color: "#555" }}>
         说明：头像来自 Mixin Inscription 上的 Blue Bight 项目

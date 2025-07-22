@@ -136,7 +136,7 @@ const styles = {
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  gap: "1.5rem",
+  gap: "1rem",
   marginBottom: "1rem",
 },
   buttonRow: {

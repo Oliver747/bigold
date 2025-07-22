@@ -70,14 +70,14 @@ export default function Home() {
             disabled={currentIndex === 0}
             style={styles.navButton}
           >
-            ⬅️⬅️⬅️
+            ⬅️
           </button>
           <button
             onClick={goForward}
             disabled={currentIndex === history.length - 1}
             style={styles.navButton}
           >
-            ➡️➡️➡️
+            ➡️
           </button>
         </div>
 

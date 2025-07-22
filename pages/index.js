@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const totalImages = 16;
 
@@ -41,14 +41,14 @@ export default function Home() {
     setImageError(false);
   };
 
-      useEffect(() => {
+  useEffect(() => {
     document.body.style.margin = "0";
     document.body.style.padding = "0";
     document.body.style.overflowX = "hidden";
     document.documentElement.style.margin = "0";
     document.documentElement.style.padding = "0";
-  }, []);      
-      
+  }, []);
+
   return (
     <div style={styles.container}>
       {/* 左上角 Logo */}
@@ -72,16 +72,38 @@ export default function Home() {
         <p style={styles.imageId}>#{currentImage}</p>
 
         {/* 上/下一张按钮组 */}
-<div style={styles.navRow}>
-  <button onClick={goBack} disabled={currentIndex === 0} style={styles.navButton}>⬅️</button>
-  <button onClick={goForward} disabled={currentIndex === history.length - 1} style={styles.navButton}>➡️</button>
-</div>
+        <div style={styles.navRow}>
+          <button
+            onClick={goBack}
+            disabled={currentIndex === 0}
+            style={styles.navButton}
+          >
+            ⬅️
+          </button>
+          <button
+            onClick={goForward}
+            disabled={currentIndex === history.length - 1}
+            style={styles.navButton}
+          >
+            ➡️
+          </button>
+        </div>
 
         {/* 随机/下载按钮组 */}
-<div style={styles.buttonRow}>
-  <button onClick={handleGenerate} style={styles.mainButton("#00796b")}>Randomize</button>
-  <button onClick={handleDownload} style={styles.mainButton("#0097a7")}>Download</button>
-</div>
+        <div style={styles.buttonRow}>
+          <button
+            onClick={handleGenerate}
+            style={styles.mainButton("#00796b")}
+          >
+            Randomize
+          </button>
+          <button
+            onClick={handleDownload}
+            style={styles.mainButton("#0097a7")}
+          >
+            Download
+          </button>
+        </div>
       </div>
 
       {/* 页脚（始终贴底） */}
@@ -92,32 +114,29 @@ export default function Home() {
   );
 }
 
-
 const styles = {
   container: {
-  minHeight: "100vh",
-      width: "100vw", 
-  display: "flex",
-  flexDirection: "column",
-  background: "linear-gradient(to bottom right, #4f46e5, #9333ea)", // 蓝到紫渐变
-  fontFamily: "Segoe UI, sans-serif",
-  color: "#ffffff", // 白色文字以适配深色背景
-    overflowX: "hidden", // ✅ 防止横向滚动
-    margin: 0, // ✅ 防止外边距
-    padding: 0,
-},
+    minHeight: "100vh",
+    width: "100vw", // 解决白边
+    overflowX: "hidden", // 防止横向滚动
+    display: "flex",
+    flexDirection: "column",
+    background: "linear-gradient(to bottom right, #4f46e5, #9333ea)",
+    fontFamily: "Segoe UI, sans-serif",
+    color: "#ffffff",
+  },
   logo: {
     position: "absolute",
     top: 20,
     left: 20,
   },
   main: {
-    flex: 1, // 自动填充内容区
+    flex: 1,
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
     padding: "2rem 1rem",
-    justifyContent: "center", // 居中内容
+    justifyContent: "center",
   },
   title: {
     fontSize: "2rem",
@@ -145,13 +164,13 @@ const styles = {
     color: "#fff",
     marginBottom: "1rem",
   },
-  navRow: {
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  gap: "1rem",
-  marginBottom: "1rem",
-},
+  navRow: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: "1rem",
+    marginBottom: "1rem",
+  },
   buttonRow: {
     display: "flex",
     flexWrap: "wrap",
@@ -184,13 +203,13 @@ const styles = {
     transition: "0.2s ease",
   },
   footer: {
-    textAlign: "center",
-    fontSize: "14px",
-    color: "#ffffff", // 白色文字在深色背景上更清晰
-    padding: "1rem",
-    borderTop: "1px solid rgba(255, 255, 255, 0.2)", // 半透明边框
-    background: "transparent",
-    marginTop: "auto", // 保证贴底
-    width: "100%", // 防止超小宽度
+    textAlign: "center",
+    fontSize: "14px",
+    color: "#ffffff",
+    padding: "1rem",
+    borderTop: "1px solid rgba(255, 255, 255, 0.2)",
+    background: "transparent",
+    marginTop: "auto",
+    width: "100%",
   },
 };

@@ -94,8 +94,7 @@ export default function Home() {
 
       {/* 页脚（始终贴底） */}
       <footer style={styles.footer}>
-        Made by YIMO
-The avatar is from the Blue Bight project on Mixin Inscription.
+        Made by YIMO | The avatar is from the Blue Bight project on Mixin Inscription.
       </footer>
     </div>
   );

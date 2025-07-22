@@ -95,7 +95,7 @@ export default function Home() {
             onClick={handleGenerate}
             style={styles.mainButton("#00796b")}
           >
-            Randomize
+            Random
           </button>
           <button
             onClick={handleDownload}
@@ -193,7 +193,7 @@ const styles = {
   height: "44px",
   whiteSpace: "nowrap",
   transition: "0.2s ease",
-  display: "flex", // ✅ 保证内容不压缩变形
+  display: "inline-flex", // ✅ 保证内容不压缩变形
   alignItems: "center",
   justifyContent: "center",
 }),
@@ -211,7 +211,7 @@ const styles = {
   textAlign: "center",
   cursor: "pointer",
   transition: "0.2s ease",
-  display: "flex",
+  display: "inline-flex",
   alignItems: "center",
   justifyContent: "center",
 },

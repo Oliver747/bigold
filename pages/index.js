@@ -58,7 +58,7 @@ export default function Home() {
 
       {/* 主内容区域 */}
       <div style={styles.main}>
-        <h1 style={styles.title}>Blue Light</h1>
+        <h1 style={styles.title}> </h1>
 
         <div style={styles.imageBox}>
           <img
@@ -199,22 +199,22 @@ const styles = {
 }),
   navButton: {
     padding: "10px 18px",
-    backgroundColor: "#e0f2f1",
-    color: "#00796b",
-    border: "none",
-    borderRadius: "8px",
-    fontWeight: "bold",
-    fontSize: "16px",
-    width: "120px", // 统一宽度
-  height: "42px", // ✅ 强制高度，避免内容多换行
-  whiteSpace: "nowrap", // ✅ 防止文字换行
-    display: "inline-flex", // ✅ 保证内容不压缩变形
+  backgroundColor: "#e0f2f1",
+  color: "#00796b",
+  border: "none",
+  borderRadius: "8px",
+  fontWeight: "bold",
+  fontSize: "16px",
+  width: "120px",
+  height: "42px",
+  whiteSpace: "nowrap",
   textAlign: "center",
-    cursor: "pointer",
-    transition: "0.2s ease",
-    alignItems: "center",
+  cursor: "pointer",
+  transition: "0.2s ease",
+  display: "inline-flex",
+  alignItems: "center",
   justifyContent: "center",
-  },
+},
   footer: {
     textAlign: "center",
     fontSize: "14px",

@@ -40,7 +40,14 @@ export default function Home() {
     if (currentIndex < history.length - 1) setCurrentIndex(currentIndex + 1);
     setImageError(false);
   };
-
+useEffect(() => {
+    document.body.style.margin = "0";
+    document.body.style.padding = "0";
+    document.body.style.overflowX = "hidden";
+    document.documentElement.style.margin = "0";
+    document.documentElement.style.padding = "0";
+  }, []);
+      
   return (
     <div style={styles.container}>
       {/* 左上角 Logo */}
@@ -84,15 +91,6 @@ export default function Home() {
   );
 }
 
-<style>
-  {`
-    html, body {
-      margin: 0;
-      padding: 0;
-      overflow-x: hidden;
-    }
-  `}
-</style>
 
 const styles = {
   container: {

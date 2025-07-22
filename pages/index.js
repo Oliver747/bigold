@@ -65,7 +65,7 @@ export default function Home() {
     </div>
 
       <h1 style={{ fontSize: "2.2rem", color: "#00796b", marginBottom: "1rem" }}>
-        
+      随机头像生成  
       </h1>
 
 
@@ -116,7 +116,7 @@ export default function Home() {
 
 
 
-      <footer style={{ fontSize: "14px", color: "#555" }}>
+      <footer style={{ fontSize: "14px", color: "#555",textAlign: "center",paddingTop: "1rem" }}>
         说明：头像来自 Mixin Inscription 上的 Blue Bight 项目
       </footer>
     </div>

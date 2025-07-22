@@ -40,14 +40,10 @@ export default function Home() {
 
   return (
     <div style={{
-    minHeight: "120vh",
-    background: "#f2f8fc",
     display: "flex",
     flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "flex-start",
-    padding: "2rem",
-    paddingTop: "3rem",
+    minHeight: "100vh",
+    background: "#f2f8fc",
     fontFamily: "Segoe UI, sans-serif",
     position: "relative" // 加这个以便定位 logo
   }}>
@@ -71,8 +67,8 @@ export default function Home() {
       flexDirection: "column",
       alignItems: "center",
       justifyContent: "center",
-      paddingTop: "4rem",
-      paddingBottom: "2rem"
+      padding: "2rem",
+      paddingTop: "6rem"
     }}>
 
       <h1 style={{ fontSize: "2.2rem", color: "#00796b", marginBottom: "1rem" }}>

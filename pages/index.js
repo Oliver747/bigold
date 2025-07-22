@@ -121,9 +121,9 @@ const navButtonStyle = {
   color: "#00796b",
   border: "none",
   borderRadius: "8px",
-  fontSize: "15px",
+  fontSize: "16px",
   fontWeight: "bold",
   cursor: "pointer",
-  minWidth: "120px",
+  minWidth: "140px",
   transition: "0.2s ease",
 };

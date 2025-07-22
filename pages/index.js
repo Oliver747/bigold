@@ -1,103 +1,85 @@
-import { useState } from "react";
+import React, { useState } from 'react';
 
-const totalImages = 16; // 请根据你的图片数量修改此值
+const TOTAL_IMAGES = 16;
 
-export default function Home() {
-  const [imageIndex, setImageIndex] = useState(1);
+function App() {
+  const [avatarIndex, setAvatarIndex] = useState(() => Math.floor(Math.random() * TOTAL_IMAGES) + 1);
 
   const handleGenerate = () => {
-    const randomIndex = Math.floor(Math.random() * totalImages) + 1;
-    setImageIndex(randomIndex);
+    const random = Math.floor(Math.random() * TOTAL_IMAGES) + 1;
+    setAvatarIndex(random);
   };
 
-  const imagePath = `/avatars/${imageIndex}.webp`;
-
   const handleDownload = () => {
-    const link = document.createElement("a");
+    const imagePath = `/avatars/#${avatarIndex}.webp`;
+    const link = document.createElement('a');
     link.href = imagePath;
-    link.download = `${imageIndex}.webp`;
+    link.download = `avatar-${avatarIndex}.webp`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
   };
 
+  const handlePrev = () => {
+    setAvatarIndex(prev => prev === 1 ? TOTAL_IMAGES : prev - 1);
+  };
+
+  const handleNext = () => {
+    setAvatarIndex(prev => prev === TOTAL_IMAGES ? 1 : prev + 1);
+  };
+
   return (
     <div style={{
       minHeight: "100vh",
-      backgroundColor: "rgba(255, 255, 255, 0.1)",
-color: "white",
-display: "flex",
+      background: "linear-gradient(to bottom, #1e1f3a, #2c2f4a)",
+      color: "white",
+      display: "flex",
       flexDirection: "column",
       alignItems: "center",
       justifyContent: "center",
-      fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"
+      fontFamily: "'Segoe UI', sans-serif",
+      padding: "20px"
     }}>
-      <h1 style={{ fontSize: "2.5rem", marginBottom: "1rem", color: "#00796b" }}>
-        🎲 
-          随机头像生成器
-      </h1>
+      <h1 style={{ fontSize: "2.5rem", marginBottom: "1rem" }}>随机头像生成器</h1>
 
       <div style={{
-        width: 220,
-        height: 220,
-        backgroundColor: "#ffffff",
-        boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
-        borderRadius: "12px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        marginBottom: "1rem",
-        padding: "10px"
+        backgroundColor: "rgba(255, 255, 255, 0.08)",
+        padding: "20px",
+        borderRadius: "20px",
+        boxShadow: "0 8px 16px rgba(0, 0, 0, 0.3)",
+        textAlign: "center"
       }}>
         <img
-          src={imagePath}
-          alt="avatar"
-          style={{
-            maxWidth: "100%",
-            maxHeight: "100%",
-            objectFit: "contain",
-            borderRadius: "10px"
-          }}
+          src={`/avatars/#${avatarIndex}.webp`}
+          alt={`Avatar #${avatarIndex}`}
+          style={{ width: "200px", height: "200px", objectFit: "contain", borderRadius: "12px" }}
         />
+        <p style={{ marginTop: "10px", fontSize: "1.1rem" }}>编号：#{avatarIndex}</p>
+
+        <div style={{ marginTop: "20px", display: "flex", gap: "10px", flexWrap: "wrap", justifyContent: "center" }}>
+          <button onClick={handlePrev} style={buttonStyle}>《 上一个</button>
+          <button onClick={handleGenerate} style={buttonStyle}>🎲 随机生成</button>
+          <button onClick={handleNext} style={buttonStyle}>下一个 》</button>
+          <button onClick={handleDownload} style={buttonStyle}>📥 下载</button>
+        </div>
       </div>
 
-      <p style={{ marginBottom: "1rem", fontWeight: "bold", color: "#333" }}>
-        当前编号：#{imageIndex}
-      </p>
-
-      <div style={{ display: "flex", gap: "1rem", marginBottom: "2rem" }}>
-        <button
-          onClick={handleGenerate}
-          style={{
-            padding: "10px 24px",
-            backgroundColor: "#00796b",
-            color: "white",
-            border: "none",
-            borderRadius: "8px",
-            cursor: "pointer"
-          }}
-        >
-          生成头像
-        </button>
-
-        <button
-          onClick={handleDownload}
-          style={{
-            padding: "10px 24px",
-            backgroundColor: "#0097a7",
-            color: "white",
-            border: "none",
-            borderRadius: "8px",
-            cursor: "pointer"
-          }}
-        >
-          下载头像
-        </button>
-      </div>
-
-      <footer style={{ fontSize: "14px", color: "#555" }}>
-        说明：以上头像基于 Mixin Inscription 上的 Blue Bight 项目
+      <footer style={{ marginTop: "40px", fontSize: "0.9rem", opacity: 0.8 }}>
+        基于 Mixin 上项目 Blue Bight
       </footer>
     </div>
   );
 }
+
+const buttonStyle = {
+  backgroundColor: "#4a4df6",
+  border: "none",
+  padding: "10px 16px",
+  borderRadius: "8px",
+  color: "white",
+  fontWeight: "bold",
+  cursor: "pointer",
+  fontSize: "1rem"
+};
+
+export default App;

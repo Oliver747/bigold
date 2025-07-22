@@ -1,5 +1,3 @@
-// pages/index.jsx 或 app/page.jsx（Next.js 项目）
-
 import { useState } from "react";
 
 const totalImages = 16;
@@ -50,11 +48,10 @@ export default function Home() {
         <img src="/logo.png" alt="Logo" style={{ height: "40px" }} />
       </div>
 
-      {/* 主体内容 */}
+      {/* 主内容区域 */}
       <div style={styles.main}>
         <h1 style={styles.title}>随机头像生成</h1>
 
-        {/* 图片展示区域 */}
         <div style={styles.imageBox}>
           <img
             src={imageError ? "/fallback.webp" : imagePath}
@@ -63,9 +60,10 @@ export default function Home() {
             style={styles.image}
           />
         </div>
+
         <p style={styles.imageId}>编号：#{currentImage}</p>
 
-        {/* 前后导航按钮 */}
+        {/* 上/下一张 */}
         <div style={styles.buttonRow}>
           <button
             onClick={goBack}
@@ -83,7 +81,7 @@ export default function Home() {
           </button>
         </div>
 
-        {/* 生成/下载按钮 */}
+        {/* 随机 / 下载 */}
         <div style={styles.buttonRow}>
           <button onClick={handleGenerate} style={styles.mainButton("#00796b")}>
             随机生成
@@ -94,7 +92,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* 固定页脚 */}
+      {/* 页脚（始终贴底） */}
       <footer style={styles.footer}>
         说明：头像来自 Mixin Inscription 上的 Blue Bight 项目
       </footer>
@@ -105,11 +103,9 @@ export default function Home() {
 const styles = {
   container: {
     minHeight: "100vh",
-    background: "#f2f8fc",
     display: "flex",
     flexDirection: "column",
-    position: "relative",
-    paddingBottom: "60px", // 留出页脚空间
+    background: "#f2f8fc",
     fontFamily: "Segoe UI, sans-serif",
   },
   logo: {
@@ -118,16 +114,17 @@ const styles = {
     left: 20,
   },
   main: {
-    marginTop: "6rem",
+    flex: 1, // 自动填充内容区
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    padding: "1rem",
+    padding: "2rem 1rem",
+    marginTop: "4rem",
   },
   title: {
     fontSize: "2rem",
     color: "#00796b",
-    marginBottom: "1rem",
+    marginBottom: "1.5rem",
   },
   imageBox: {
     width: "220px",
@@ -182,11 +179,11 @@ const styles = {
     transition: "0.2s ease",
   },
   footer: {
-    position: "absolute",
-    bottom: 10,
-    width: "100%",
     textAlign: "center",
     fontSize: "14px",
     color: "#555",
+    padding: "1rem",
+    borderTop: "1px solid #ccc",
+    background: "#f2f8fc",
   },
 };

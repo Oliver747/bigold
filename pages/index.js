@@ -11,7 +11,6 @@ export default function Home() {
 
   const handleGenerate = () => {
     const random = Math.floor(Math.random() * totalImages) + 1;
-    // 如果当前不是在最后一张，就清除 forward 历史
     const newHistory = history.slice(0, currentIndex + 1);
     newHistory.push(random);
     setHistory(newHistory);
@@ -54,6 +53,23 @@ export default function Home() {
         🎲 随机头像生成器
       </h1>
 
+      {/* 上一个 / 下一个按钮 */}
+      <div style={{ display: "flex", gap: "1rem", marginBottom: "1rem" }}>
+        <button onClick={goBack} style={navButtonStyle} disabled={currentIndex === 0}>
+          ⬅ 上一个
+        </button>
+        <button onClick={goForward} style={navButtonStyle} disabled={currentIndex === history.length - 1}>
+          下一个 ➡
+        </button>
+      </div>
+
+      {/* 随机生成 / 下载 */}
+      <div style={{ display: "flex", gap: "1rem", marginBottom: "1rem" }}>
+        <button onClick={handleGenerate} style={mainButtonStyle("#00796b")}>🎲 随机生成</button>
+        <button onClick={handleDownload} style={mainButtonStyle("#0097a7")}>⬇️ 下载头像</button>
+      </div>
+
+      {/* 图片区域 */}
       <div style={{
         width: 220,
         height: 220,
@@ -65,26 +81,17 @@ export default function Home() {
         justifyContent: "center",
         marginBottom: "1rem",
         padding: "10px",
-        position: "relative"
       }}>
         <img
           src={imagePath}
           alt="avatar"
           style={{ maxWidth: "100%", maxHeight: "100%", borderRadius: "10px" }}
         />
-
-        <button onClick={goBack} style={arrowStyle("left")} disabled={currentIndex === 0}>←</button>
-        <button onClick={goForward} style={arrowStyle("right")} disabled={currentIndex === history.length - 1}>→</button>
       </div>
 
-      <p style={{ fontWeight: "bold", color: "#444", marginBottom: "1.2rem" }}>
+      <p style={{ fontWeight: "bold", color: "#444", marginBottom: "1.5rem" }}>
         当前编号：#{currentImage}
       </p>
-
-      <div style={{ display: "flex", gap: "1rem", marginBottom: "2rem" }}>
-        <button onClick={handleGenerate} style={buttonStyle("#00796b")}>随机生成</button>
-        <button onClick={handleDownload} style={buttonStyle("#0097a7")}>下载头像</button>
-      </div>
 
       <footer style={{ fontSize: "14px", color: "#555" }}>
         说明：头像来自 Mixin Inscription 上的 Blue Bight 项目
@@ -93,28 +100,28 @@ export default function Home() {
   );
 }
 
-function arrowStyle(position) {
-  return {
-    position: "absolute",
-    top: "50%",
-    [position]: "-40px",
-    transform: "translateY(-50%)",
-    fontSize: "1.5rem",
-    background: "none",
-    border: "none",
-    cursor: "pointer",
-    color: "#00796b"
-  };
-}
+const mainButtonStyle = (bgColor) => ({
+  padding: "10px 20px",
+  backgroundColor: bgColor,
+  color: "#fff",
+  border: "none",
+  borderRadius: "8px",
+  cursor: "pointer",
+  fontWeight: "bold",
+  fontSize: "16px",
+  minWidth: "140px",
+  transition: "0.2s ease",
+});
 
-function buttonStyle(bgColor) {
-  return {
-    padding: "10px 20px",
-    backgroundColor: bgColor,
-    color: "#fff",
-    border: "none",
-    borderRadius: "8px",
-    cursor: "pointer",
-    fontWeight: "bold"
-  };
-}
+const navButtonStyle = {
+  padding: "8px 18px",
+  backgroundColor: "#e0f2f1",
+  color: "#00796b",
+  border: "2px solid #00796b",
+  borderRadius: "8px",
+  fontSize: "15px",
+  fontWeight: "bold",
+  cursor: "pointer",
+  minWidth: "120px",
+  transition: "0.2s ease",
+};

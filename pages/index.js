@@ -111,7 +111,7 @@ const mainButtonStyle = (bgColor) => ({
   cursor: "pointer",
   fontWeight: "bold",
   fontSize: "16px",
-  minWidth: "140px",
+  minWidth: "110px",
   transition: "0.2s ease",
 });
 
@@ -124,6 +124,6 @@ const navButtonStyle = {
   fontSize: "16px",
   fontWeight: "bold",
   cursor: "pointer",
-  minWidth: "140px",
+  minWidth: "110px",
   transition: "0.2s ease",
 };

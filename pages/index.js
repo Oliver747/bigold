@@ -118,6 +118,8 @@ const styles = {
   container: {
     minHeight: "100vh",
     width: "100vw", // 解决白边
+    margin: "0", // ✅ 添加这行
+  padding: "0", // ✅ 添加这行
     overflowX: "hidden", // 防止横向滚动
     display: "flex",
     flexDirection: "column",
@@ -179,19 +181,22 @@ const styles = {
     justifyContent: "center",
   },
   mainButton: (bgColor) => ({
-    padding: "10px 18px",
-    backgroundColor: bgColor,
-    color: "#fff",
-    border: "none",
-    borderRadius: "8px",
-    cursor: "pointer",
-    fontWeight: "bold",
-    fontSize: "16px",
-    minWidth: "120px", // ✅ 稍微减小，避免换行
-  height: "42px", // ✅ 强制高度
-  whiteSpace: "nowrap", // ✅ 防止换行
-    transition: "0.2s ease",
-  }),
+  padding: "10px 18px",
+  backgroundColor: bgColor,
+  color: "#fff",
+  border: "none",
+  borderRadius: "8px",
+  cursor: "pointer",
+  fontWeight: "bold",
+  fontSize: "16px",
+  minWidth: "120px",
+  height: "42px",
+  whiteSpace: "nowrap",
+  transition: "0.2s ease",
+  display: "inline-flex", // ✅ 保证内容不压缩变形
+  alignItems: "center",
+  justifyContent: "center",
+}),
   navButton: {
     padding: "10px 18px",
     backgroundColor: "#e0f2f1",
@@ -203,9 +208,12 @@ const styles = {
     width: "120px", // 统一宽度
   height: "42px", // ✅ 强制高度，避免内容多换行
   whiteSpace: "nowrap", // ✅ 防止文字换行
+    display: "inline-flex", // ✅ 保证内容不压缩变形
   textAlign: "center",
     cursor: "pointer",
     transition: "0.2s ease",
+    alignItems: "center",
+  justifyContent: "center",
   },
   footer: {
     textAlign: "center",

@@ -70,24 +70,24 @@ export default function Home() {
             disabled={currentIndex === 0}
             style={styles.navButton}
           >
-            ⬅️ 上一张
+            ⬅️⬅️⬅️
           </button>
           <button
             onClick={goForward}
             disabled={currentIndex === history.length - 1}
             style={styles.navButton}
           >
-            下一张 ➡️
+            ➡️➡️➡️
           </button>
         </div>
 
         {/* 随机 / 下载 */}
         <div style={styles.buttonRow}>
           <button onClick={handleGenerate} style={styles.mainButton("#00796b")}>
-            随机生成
+            Randomize
           </button>
           <button onClick={handleDownload} style={styles.mainButton("#0097a7")}>
-            下载头像
+            Download
           </button>
         </div>
       </div>

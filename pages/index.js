@@ -71,16 +71,13 @@ export default function Home() {
 
       {/* 图片区域 */}
       <div style={{
-        width: 220,
-        height: 220,
-        backgroundColor: "#fff",
-        boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
-        borderRadius: "12px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        marginBottom: "1rem",
-        padding: "10px",
+        flexGrow: 1,
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "center",
+      paddingTop: "4rem",
+      paddingBottom: "2rem"
       }}>
         <img
           src={imagePath}
@@ -109,13 +106,7 @@ export default function Home() {
         <button onClick={handleDownload} style={mainButtonStyle("#0097a7")}>下载头像</button>
       </div>
 
-      
-
-
-
-
-
-
+  
       <footer style={{ fontSize: "14px", color: "#555",textAlign: "center",paddingTop: "1rem" }}>
         说明：头像来自 Mixin Inscription 上的 Blue Bight 项目
       </footer>

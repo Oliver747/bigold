@@ -84,6 +84,16 @@ export default function Home() {
   );
 }
 
+<style>
+  {`
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+  `}
+</style>
+
 const styles = {
   container: {
   minHeight: "100vh",

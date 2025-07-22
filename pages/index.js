@@ -70,14 +70,14 @@ export default function Home() {
             disabled={currentIndex === 0}
             style={styles.navButton}
           >
-            ⬅️
+            ⬅️⬅️⬅️
           </button>
           <button
             onClick={goForward}
             disabled={currentIndex === history.length - 1}
             style={styles.navButton}
           >
-            ➡️
+            ➡️➡️➡️
           </button>
         </div>
 
@@ -102,11 +102,12 @@ export default function Home() {
 
 const styles = {
   container: {
-  minHeight: "100vh",
-  display: "flex",
-  flexDirection: "column",
-  background: "linear-gradient(to bottom right, #4f46e5, #9333ea)", // 蓝到紫渐变
-  fontFamily: "Segoe UI, sans-serif",
+    minHeight: "100vh",
+    display: "flex",
+    flexDirection: "column",
+    background: "#f2f8fc",
+    fontFamily: "Segoe UI, sans-serif",
+  },
   logo: {
     position: "absolute",
     top: 20,

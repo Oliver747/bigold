@@ -87,6 +87,7 @@ export default function Home() {
 const styles = {
   container: {
   minHeight: "100vh",
+      width: "100vw", 
   display: "flex",
   flexDirection: "column",
   background: "linear-gradient(to bottom right, #4f46e5, #9333ea)", // 蓝到紫渐变

@@ -107,6 +107,7 @@ const styles = {
     flexDirection: "column",
     background: "#f2f8fc",
     fontFamily: "Segoe UI, sans-serif",
+    position: "relative",
   },
   logo: {
     position: "absolute",

@@ -103,7 +103,7 @@ export default function Home() {
 }
 
 const mainButtonStyle = (bgColor) => ({
-  padding: "10px 20px",
+  padding: "8px 18px",
   backgroundColor: bgColor,
   color: "#fff",
   border: "none",
@@ -119,7 +119,7 @@ const navButtonStyle = {
   padding: "8px 18px",
   backgroundColor: "#e0f2f1",
   color: "#00796b",
-  border: "2px solid #00796b",
+  border: "none",
   borderRadius: "8px",
   fontSize: "15px",
   fontWeight: "bold",

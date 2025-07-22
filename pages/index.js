@@ -50,7 +50,7 @@ export default function Home() {
 
       {/* 主内容区域 */}
       <div style={styles.main}>
-        <h1 style={styles.title}>随机头像生成</h1>
+        <h1 style={styles.title}>Blue Light</h1>
 
         <div style={styles.imageBox}>
           <img
@@ -61,7 +61,7 @@ export default function Home() {
           />
         </div>
 
-        <p style={styles.imageId}>编号：#{currentImage}</p>
+        <p style={styles.imageId}>NO.：#{currentImage}</p>
 
         {/* 上/下一张 */}
         <div style={styles.buttonRow}>

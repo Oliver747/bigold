@@ -1,32 +1,42 @@
 import { useState } from "react";
 
-const totalImages = 16; // 你的头像数量
+const totalImages = 16;
 
 export default function Home() {
-  const [imageIndex, setImageIndex] = useState(1);
+  const [history, setHistory] = useState([1]);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-  const imagePath = `/avatars/${imageIndex}.webp`;
+  const currentImage = history[currentIndex];
+  const imagePath = `/avatars/${currentImage}.webp`;
 
   const handleGenerate = () => {
-    const randomIndex = Math.floor(Math.random() * totalImages) + 1;
-    setImageIndex(randomIndex);
+    const random = Math.floor(Math.random() * totalImages) + 1;
+    // 如果当前不是在最后一张，就清除 forward 历史
+    const newHistory = history.slice(0, currentIndex + 1);
+    newHistory.push(random);
+    setHistory(newHistory);
+    setCurrentIndex(newHistory.length - 1);
   };
 
   const handleDownload = () => {
     const link = document.createElement("a");
     link.href = imagePath;
-    link.download = `${imageIndex}.webp`;
+    link.download = `${currentImage}.webp`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
   };
 
-  const prevImage = () => {
-    setImageIndex((prev) => (prev === 1 ? totalImages : prev - 1));
+  const goBack = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
+    }
   };
 
-  const nextImage = () => {
-    setImageIndex((prev) => (prev === totalImages ? 1 : prev + 1));
+  const goForward = () => {
+    if (currentIndex < history.length - 1) {
+      setCurrentIndex(currentIndex + 1);
+    }
   };
 
   return (
@@ -63,18 +73,14 @@ export default function Home() {
           style={{ maxWidth: "100%", maxHeight: "100%", borderRadius: "10px" }}
         />
 
-        {/* 左箭头 */}
-        <button onClick={prevImage} style={arrowStyle("left")}>←</button>
-
-        {/* 右箭头 */}
-        <button onClick={nextImage} style={arrowStyle("right")}>→</button>
+        <button onClick={goBack} style={arrowStyle("left")} disabled={currentIndex === 0}>←</button>
+        <button onClick={goForward} style={arrowStyle("right")} disabled={currentIndex === history.length - 1}>→</button>
       </div>
 
       <p style={{ fontWeight: "bold", color: "#444", marginBottom: "1.2rem" }}>
-        当前编号：#{imageIndex}
+        当前编号：#{currentImage}
       </p>
 
-      {/* 操作按钮排第二行 */}
       <div style={{ display: "flex", gap: "1rem", marginBottom: "2rem" }}>
         <button onClick={handleGenerate} style={buttonStyle("#00796b")}>随机生成</button>
         <button onClick={handleDownload} style={buttonStyle("#0097a7")}>下载头像</button>
@@ -87,7 +93,6 @@ export default function Home() {
   );
 }
 
-// 箭头样式
 function arrowStyle(position) {
   return {
     position: "absolute",
@@ -102,7 +107,6 @@ function arrowStyle(position) {
   };
 }
 
-// 按钮样式
 function buttonStyle(bgColor) {
   return {
     padding: "10px 20px",

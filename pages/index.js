@@ -1,6 +1,7 @@
+// 安装依赖：npm install react-icons
 
 import { useState } from "react";
-import { FiArrowLeft, FiArrowRight, FiCode } from "react-icons/fi";
+import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 
 const totalImages = 16;
 
@@ -65,36 +66,36 @@ export default function Home() {
         </div>
         <p style={styles.imageId}>#{currentImage}</p>
 
+        {/* 📐 新版箭头按钮 */}
         <div style={styles.navButtons}>
-          <button onClick={goBack} disabled={currentIndex === 0} style={styles.iconButton}>
-            <FiArrowLeft size={22} />
+          <button
+            onClick={goBack}
+            disabled={currentIndex === 0}
+            style={styles.arrowButton}
+          >
+            <FiArrowLeft size={24} />
           </button>
-          <button onClick={handleGenerate} style={styles.iconButton}>
-            <span style={{ fontSize: 18 }}>⏯️</span>
-          </button>
-          <button onClick={goForward} disabled={currentIndex === history.length - 1} style={styles.iconButton}>
-            <FiArrowRight size={22} />
-          </button>
-          <button onClick={() => {}} style={styles.iconButton}>
-            <FiCode size={20} />
+          <button
+            onClick={goForward}
+            disabled={currentIndex === history.length - 1}
+            style={styles.arrowButton}
+          >
+            <FiArrowRight size={24} />
           </button>
         </div>
 
         <div style={styles.buttonRow}>
-          <button onClick={handleGenerate} style={styles.mainButton}>
-            随机生成
+          <button onClick={handleGenerate} style={styles.mainButton("#00796b")}>
+            Randomize
           </button>
-          <button onClick={handleDownload} style={styles.mainButton}>
-            下载头像
+          <button onClick={handleDownload} style={styles.mainButton("#0097a7")}>
+            Download
           </button>
         </div>
       </main>
 
       <footer style={styles.footer}>
-        Made by 0泡　|　
-        <a href="#" style={{ color: "#fff", textDecoration: "underline" }}>
-          English
-        </a>
+        Made by YIMO | The avatar is from the Blue Light project on Mixin Inscription.
       </footer>
     </div>
   );
@@ -103,11 +104,11 @@ export default function Home() {
 const styles = {
   container: {
     minHeight: "100vh",
-    background: "linear-gradient(to bottom, #0f2027, #203a43, #2c5364)",
     display: "flex",
     flexDirection: "column",
+    background: "#f2f8fc",
     fontFamily: "Segoe UI, sans-serif",
-    color: "#fff",
+    position: "relative",
   },
   logo: {
     position: "absolute",
@@ -124,14 +125,15 @@ const styles = {
   },
   title: {
     fontSize: "2.2rem",
-    color: "#fff",
+    color: "#00796b",
     marginBottom: "1.5rem",
   },
   imageBox: {
     width: 240,
     height: 240,
     background: "#fff",
-    borderRadius: 16,
+    borderRadius: 12,
+    boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -140,9 +142,52 @@ const styles = {
   image: {
     maxWidth: "100%",
     maxHeight: "100%",
-    borderRadius: 12,
+    borderRadius: 10,
   },
   imageId: {
     fontWeight: "bold",
-    marginBottom: "1.5rem",
-    f
+    color: "#444",
+    marginBottom: "1rem",
+  },
+  navButtons: {
+    display: "flex",
+    gap: "1rem",
+    marginBottom: "1rem",
+  },
+  arrowButton: {
+    background: "#fff",
+    border: "1px solid #ccc",
+    borderRadius: "50%",
+    padding: 10,
+    cursor: "pointer",
+    boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
+    transition: "all 0.2s ease",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  buttonRow: {
+    display: "flex",
+    gap: "1rem",
+  },
+  mainButton: (bgColor) => ({
+    padding: "10px 18px",
+    backgroundColor: bgColor,
+    color: "#fff",
+    border: "none",
+    borderRadius: 8,
+    cursor: "pointer",
+    fontWeight: "bold",
+    fontSize: 16,
+    minWidth: 110,
+    transition: "0.2s ease",
+  }),
+  footer: {
+    textAlign: "center",
+    fontSize: 14,
+    color: "#555",
+    padding: "1rem 0",
+    borderTop: "1px solid #ccc",
+    background: "#f2f8fc",
+  },
+};

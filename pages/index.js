@@ -63,6 +63,17 @@ export default function Home() {
         style={{ height: "40px", objectFit: "contain" }}
       />
     </div>
+  
+{/* 主内容区域 */}
+    <div style={{
+      flex: 1,
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "center",
+      paddingTop: "4rem",
+      paddingBottom: "2rem"
+    }}>
 
       <h1 style={{ fontSize: "2.2rem", color: "#00796b", marginBottom: "1rem" }}>
       随机头像生成  

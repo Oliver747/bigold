@@ -80,17 +80,17 @@ export default function Home() {
 {/* 上一个 / 下一个按钮 */}
       <div style={{ display: "flex", gap: "1rem", marginBottom: "1rem" }}>
         <button onClick={goBack} style={navButtonStyle} disabled={currentIndex === 0}>
-          ⬅ 上一个
+          ⬅ 上一张
         </button>
         <button onClick={goForward} style={navButtonStyle} disabled={currentIndex === history.length - 1}>
-          下一个 ➡
+          下一张 ➡
         </button>
       </div>
 
       {/* 随机生成 / 下载 */}
       <div style={{ display: "flex", gap: "1rem", marginBottom: "1rem" }}>
-        <button onClick={handleGenerate} style={mainButtonStyle("#00796b")}>🎲 随机生成</button>
-        <button onClick={handleDownload} style={mainButtonStyle("#0097a7")}>⬇️ 下载头像</button>
+        <button onClick={handleGenerate} style={mainButtonStyle("#00796b")}>随机生成</button>
+        <button onClick={handleDownload} style={mainButtonStyle("#0097a7")}>下载头像</button>
       </div>
 
       

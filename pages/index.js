@@ -115,12 +115,13 @@ const styles = {
     left: 20,
   },
   main: {
-    flex: 1, // 自动填充内容区
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    padding: "2rem 1rem",
-    marginTop: "4rem",
+   flex: 1,
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        paddingTop: "4rem",
+        paddingBottom: "2rem"
   },
   title: {
     fontSize: "2rem",

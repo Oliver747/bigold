@@ -92,6 +92,9 @@ const styles = {
   background: "linear-gradient(to bottom right, #4f46e5, #9333ea)", // 蓝到紫渐变
   fontFamily: "Segoe UI, sans-serif",
   color: "#ffffff", // 白色文字以适配深色背景
+    overflowX: "hidden", // ✅ 防止横向滚动
+    margin: 0, // ✅ 防止外边距
+    padding: 0,
 },
   logo: {
     position: "absolute",

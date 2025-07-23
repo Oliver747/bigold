@@ -169,20 +169,23 @@ const styles = {
   },
 
   baseButton: {
-    padding: "10px 18px",
-    width: "120px",
-    height: "44px",
-    fontSize: "16px",
-    fontWeight: "bold",
-    border: "none",
-    borderRadius: "8px",
-    whiteSpace: "nowrap",
-    display: "inline-flex",
-    alignItems: "center",
-    justifyContent: "center",
-    cursor: "pointer",
-    transition: "0.2s ease",
-  },
+  padding: "10px 18px",
+  width: "calc(50% - 4px)", // ✅ 自适应一行放两个按钮
+  height: "44px",
+  fontSize: "16px",
+  fontWeight: "bold",
+  border: "none",
+  borderRadius: "8px",
+  whiteSpace: "nowrap",
+  display: "inline-flex",
+  alignItems: "center",
+  justifyContent: "center",
+  cursor: "pointer",
+  transition: "0.2s ease",
+  flexShrink: 1,            // ✅ 防止撑破容器
+  minWidth: 0,              // ✅ 防止超出容器
+},
+
 
   navButton: {
     backgroundColor: "#e0f2f1",

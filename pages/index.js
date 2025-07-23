@@ -147,8 +147,8 @@ const styles = {
     marginBottom: "1.5rem",
   },
   imageBox: {
-    width: "320px",
-    height: "320px",
+    width: "250px",
+    height: "250px",
     backgroundColor: "#fff",
     borderRadius: "12px",
     boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
@@ -228,6 +228,6 @@ width: "100%",
   background: "transparent",
   marginTop: "auto",
   width: "100%",
-+ boxSizing: "border-box",
+boxSizing: "border-box",
 }
 };

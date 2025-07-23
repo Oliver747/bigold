@@ -169,23 +169,20 @@ const styles = {
   },
 
   baseButton: {
-  padding: "10px 18px",
-  width: "calc(50% - 4px)", // ✅ 自适应一行放两个按钮
-  height: "44px",
-  fontSize: "16px",
-  fontWeight: "bold",
-  border: "none",
-  borderRadius: "8px",
-  whiteSpace: "nowrap",
-  display: "inline-flex",
-  alignItems: "center",
-  justifyContent: "center",
-  cursor: "pointer",
-  transition: "0.2s ease",
-  flexShrink: 1,            // ✅ 防止撑破容器
-  minWidth: 0,              // ✅ 防止超出容器
-},
-
+    padding: "10px 18px",
+    width: "120px",
+    height: "44px",
+    fontSize: "16px",
+    fontWeight: "bold",
+    border: "none",
+    borderRadius: "8px",
+    whiteSpace: "nowrap",
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "center",
+    cursor: "pointer",
+    transition: "0.2s ease",
+  },
 
   navButton: {
     backgroundColor: "#e0f2f1",
@@ -200,22 +197,23 @@ const styles = {
   navRow: {
   display: "flex",
   justifyContent: "center",
-  alignItems: "center",
   flexWrap: "wrap",
   gap: "0.5rem",
   marginBottom: "1rem",
-  maxWidth: "280px",      // ✅ 添加
-  alignSelf: "center",    // ✅ 添加
+  maxWidth: "280px", // ✅ 控制容器宽度
+  marginLeft: "auto", // ✅ 居中
+  marginRight: "auto",
 },
 
 buttonRow: {
   display: "flex",
+  justifyContent: "center",
   flexWrap: "wrap",
   gap: "0.5rem",
   marginBottom: "1rem",
-  justifyContent: "center",
-  maxWidth: "280px",      // ✅ 添加
-  alignSelf: "center",    // ✅ 添加
+  maxWidth: "280px", // ✅ 一样处理
+  marginLeft: "auto",
+  marginRight: "auto",
 },
 
 

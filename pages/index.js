@@ -107,8 +107,7 @@ export default function Home() {
       </div>
 
       {/* 页脚 */}
-      <footer style={styles.footer}>
-        Made by YIMO | Blue Light project on Mixin Inscription.
+      <footer style={styles.footer}>Made by YIMO
       </footer>
     </div>
   );
@@ -170,8 +169,7 @@ const styles = {
 
   baseButton: {
   padding: "10px 18px",
-  // ✅ 改动：删除 width 设置，改为 flex 自动撑开
-  flex: 1,
+width: "130px",
   height: "44px",
   fontSize: "16px",
   fontWeight: "bold",

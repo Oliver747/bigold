@@ -58,7 +58,7 @@ export default function Home() {
 
       {/* 主内容区域 */}
       <div style={styles.main}>
-        <h1 style={styles.title}> </h1>
+        <h1 style={styles.title}></h1>
 
         <div style={styles.imageBox}>
           <img
@@ -76,14 +76,14 @@ export default function Home() {
           <button
             onClick={goBack}
             disabled={currentIndex === 0}
-            style={styles.navButton}
+            style={{ ...styles.baseButton, ...styles.navButton }}
           >
             Prev
           </button>
           <button
             onClick={goForward}
             disabled={currentIndex === history.length - 1}
-            style={styles.navButton}
+            style={{ ...styles.baseButton, ...styles.navButton }}
           >
             Next
           </button>
@@ -93,20 +93,20 @@ export default function Home() {
         <div style={styles.buttonRow}>
           <button
             onClick={handleGenerate}
-            style={styles.mainButton("#00796b")}
+            style={{ ...styles.baseButton, ...styles.mainButton("#00796b") }}
           >
             Random
           </button>
           <button
             onClick={handleDownload}
-            style={styles.mainButton("#0097a7")}
+            style={{ ...styles.baseButton, ...styles.mainButton("#0097a7") }}
           >
             Download
           </button>
         </div>
       </div>
 
-      {/* 页脚（始终贴底） */}
+      {/* 页脚 */}
       <footer style={styles.footer}>
         Made by YIMO | The avatar is from the Blue Light project on Mixin Inscription.
       </footer>
@@ -117,11 +117,11 @@ export default function Home() {
 const styles = {
   container: {
     minHeight: "100vh",
-    width: "100vw", // 解决白边
-    margin: "0", // ✅ 添加这行
-  padding: "0", // ✅ 添加这行
-    overflowX: "hidden", // 防止横向滚动
-      boxsizing:"border-box",
+    width: "100vw",
+    margin: "0",
+    padding: "0",
+    overflowX: "hidden",
+    boxSizing: "border-box",
     display: "flex",
     flexDirection: "column",
     background: "linear-gradient(to bottom right, #4f46e5, #9333ea)",
@@ -167,56 +167,49 @@ const styles = {
     color: "#fff",
     marginBottom: "1rem",
   },
+
+  baseButton: {
+    padding: "10px 18px",
+    width: "130px",
+    height: "44px",
+    fontSize: "16px",
+    fontWeight: "bold",
+    border: "none",
+    borderRadius: "8px",
+    whiteSpace: "nowrap",
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "center",
+    cursor: "pointer",
+    transition: "0.2s ease",
+  },
+
+  navButton: {
+    backgroundColor: "#e0f2f1",
+    color: "#00796b",
+  },
+
+  mainButton: (bgColor) => ({
+    backgroundColor: bgColor,
+    color: "#fff",
+  }),
+
   navRow: {
     display: "flex",
     justifyContent: "center",
-    alignItems: "center",
-      flexWrap: "wrap",
     gap: "0.5rem",
     marginBottom: "1rem",
+    flexWrap: "wrap",
   },
+
   buttonRow: {
     display: "flex",
-    flexWrap: "wrap",
+    justifyContent: "center",
     gap: "0.5rem",
     marginBottom: "1rem",
-    justifyContent: "center",
+    flexWrap: "wrap",
   },
-  mainButton: (bgColor) => ({
-  padding: "10px 18px",
-  backgroundColor: bgColor,
-  color: "#fff",
-  border: "none",
-  borderRadius: "8px",
-  cursor: "pointer",
-  fontWeight: "bold",
-  fontSize: "16px",
-  width: "130px",
-  height: "44px",
-  whiteSpace: "nowrap",
-  transition: "0.2s ease",
-  display: "inline-flex", // ✅ 保证内容不压缩变形
-  alignItems: "center",
-  justifyContent: "center",
-}),
-  navButton: {
-    padding: "10px 18px",
-  backgroundColor: "#e0f2f1",
-  color: "#00796b",
-  border: "none",
-  borderRadius: "8px",
-  fontWeight: "bold",
-  fontSize: "16px",
-  width: "130px",
-  height: "44px",
-  whiteSpace: "nowrap",
-  textAlign: "center",
-  cursor: "pointer",
-  transition: "0.2s ease",
-  display: "inline-flex",
-  alignItems: "center",
-  justifyContent: "center",
-},
+
   footer: {
     textAlign: "center",
     fontSize: "14px",

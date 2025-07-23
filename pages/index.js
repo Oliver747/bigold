@@ -191,7 +191,7 @@ const styles = {
   cursor: "pointer",
   fontWeight: "bold",
   fontSize: "16px",
-  Width: "130px",
+  width: "130px",
   height: "44px",
   whiteSpace: "nowrap",
   transition: "0.2s ease",

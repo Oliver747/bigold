@@ -170,7 +170,7 @@ const styles = {
 
   baseButton: {
     padding: "10px 18px",
-    width: "130px",
+    width: "120px",
     height: "44px",
     fontSize: "16px",
     fontWeight: "bold",
@@ -195,20 +195,27 @@ const styles = {
   }),
 
   navRow: {
-    display: "flex",
-    justifyContent: "center",
-    gap: "0.5rem",
-    marginBottom: "1rem",
-    flexWrap: "wrap",
-  },
+  display: "flex",
+  justifyContent: "center",
+  flexWrap: "wrap",
+  gap: "0.5rem",
+  marginBottom: "1rem",
+  maxWidth: "280px", // ✅ 控制容器宽度
+  marginLeft: "auto", // ✅ 居中
+  marginRight: "auto",
+},
 
-  buttonRow: {
-    display: "flex",
-    justifyContent: "center",
-    gap: "0.5rem",
-    marginBottom: "1rem",
-    flexWrap: "wrap",
-  },
+buttonRow: {
+  display: "flex",
+  justifyContent: "center",
+  flexWrap: "wrap",
+  gap: "0.5rem",
+  marginBottom: "1rem",
+  maxWidth: "280px", // ✅ 一样处理
+  marginLeft: "auto",
+  marginRight: "auto",
+},
+
 
   footer: {
     textAlign: "center",

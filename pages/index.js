@@ -108,7 +108,7 @@ export default function Home() {
 
       {/* 页脚（始终贴底） */}
       <footer style={styles.footer}>
-        Made by YIMO | 7Blue Light project on Mixin Inscription.
+        Made by YIMO | 9Blue Light project on Mixin Inscription.
       </footer>
     </div>
   );
@@ -193,7 +193,7 @@ width: "100%",
   cursor: "pointer",
   fontWeight: "bold",
   fontSize: "16px",
-  width: "130px",
+  width: "110px",
   height: "44px",
   whiteSpace: "nowrap",
   transition: "0.2s ease",
@@ -209,7 +209,7 @@ width: "100%",
   borderRadius: "8px",
   fontWeight: "bold",
   fontSize: "16px",
-  width: "130px",
+  width: "110px",
   height: "44px",
   whiteSpace: "nowrap",
   textAlign: "center",

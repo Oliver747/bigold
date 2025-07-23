@@ -108,7 +108,7 @@ export default function Home() {
 
       {/* 页脚（始终贴底） */}
       <footer style={styles.footer}>
-        Made by YIMO | 10Blue Light
+        Made by YIMO | 11Blue Light
       </footer>
     </div>
   );
@@ -172,14 +172,14 @@ const styles = {
     justifyContent: "center",
     alignItems: "center",
       flexWrap: "wrap",
-    gap: "0.2rem",
+    gap: "0.1rem",
     marginBottom: "1rem",
 width: "100%",
   },
   buttonRow: {
     display: "flex",
     flexWrap: "wrap",
-    gap: "0.2rem",
+    gap: "0.1rem",
     marginBottom: "1rem",
     justifyContent: "center",
 width: "100%",

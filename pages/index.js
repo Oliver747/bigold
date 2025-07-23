@@ -108,7 +108,7 @@ export default function Home() {
 
       {/* 页脚 */}
       <footer style={styles.footer}>
-        Made by YIMO | The avatar is from the Blue Light project on Mixin Inscription.
+        Made by YIMO | Blue Light project on Mixin Inscription.
       </footer>
     </div>
   );
@@ -169,23 +169,22 @@ const styles = {
   },
 
   baseButton: {
-  padding: "10px 18px",
-  width: "calc(50% - 4px)", // ✅ 自适应一行放两个按钮
-  height: "44px",
-  fontSize: "16px",
-  fontWeight: "bold",
-  border: "none",
-  borderRadius: "8px",
-  whiteSpace: "nowrap",
-  display: "inline-flex",
-  alignItems: "center",
-  justifyContent: "center",
-  cursor: "pointer",
-  transition: "0.2s ease",
-  flexShrink: 1,            // ✅ 防止撑破容器
-  minWidth: 0,              // ✅ 防止超出容器
-},
-
+    padding: "10px 18px",
+    width: "calc(50% - 4px)",  // ✅ 自动宽度适配两列
+    height: "44px",
+    fontSize: "16px",
+    fontWeight: "bold",
+    border: "none",
+    borderRadius: "8px",
+    whiteSpace: "nowrap",
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "center",
+    cursor: "pointer",
+    transition: "0.2s ease",
+    flexShrink: 1,             // ✅ 防止按钮撑破容器
+    minWidth: 0,
+  },
 
   navButton: {
     backgroundColor: "#e0f2f1",
@@ -198,26 +197,24 @@ const styles = {
   }),
 
   navRow: {
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  flexWrap: "wrap",
-  gap: "0.5rem",
-  marginBottom: "1rem",
-  maxWidth: "280px",      // ✅ 添加
-  alignSelf: "center",    // ✅ 添加
-},
+    display: "flex",
+    justifyContent: "center",
+    gap: "0.5rem",
+    marginBottom: "1rem",
+    flexWrap: "wrap",
+    width: "100%",
+    maxWidth: "320px",
+  },
 
-buttonRow: {
-  display: "flex",
-  flexWrap: "wrap",
-  gap: "0.5rem",
-  marginBottom: "1rem",
-  justifyContent: "center",
-  maxWidth: "280px",      // ✅ 添加
-  alignSelf: "center",    // ✅ 添加
-},
-
+  buttonRow: {
+    display: "flex",
+    justifyContent: "center",
+    gap: "0.5rem",
+    marginBottom: "1rem",
+    flexWrap: "wrap",
+    width: "100%",
+    maxWidth: "320px",
+  },
 
   footer: {
     textAlign: "center",

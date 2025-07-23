@@ -108,7 +108,7 @@ export default function Home() {
 
       {/* 页脚 */}
       <footer style={styles.footer}>
-        Made by YIMO | The avatar is from the Blue Light project on Mixin Inscription.
+        Made by YIMO | Blue Light
       </footer>
     </div>
   );

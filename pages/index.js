@@ -174,7 +174,6 @@ const styles = {
       flexWrap: "wrap",
     gap: "0.4rem",
     marginBottom: "1rem",
-maxWidth: "280px",
 width: "100%",
   },
   buttonRow: {
@@ -183,7 +182,6 @@ width: "100%",
     gap: "0.4rem",
     marginBottom: "1rem",
     justifyContent: "center",
-maxWidth: "280px",
 width: "100%",
   },
   mainButton: (bgColor) => ({

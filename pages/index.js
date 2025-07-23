@@ -197,23 +197,22 @@ const styles = {
   navRow: {
   display: "flex",
   justifyContent: "center",
+  alignItems: "center",
   flexWrap: "wrap",
   gap: "0.5rem",
   marginBottom: "1rem",
-  maxWidth: "280px", // ✅ 控制容器宽度
-  marginLeft: "auto", // ✅ 居中
-  marginRight: "auto",
+  maxWidth: "280px",      // ✅ 添加
+  alignSelf: "center",    // ✅ 添加
 },
 
 buttonRow: {
   display: "flex",
-  justifyContent: "center",
   flexWrap: "wrap",
   gap: "0.5rem",
   marginBottom: "1rem",
-  maxWidth: "280px", // ✅ 一样处理
-  marginLeft: "auto",
-  marginRight: "auto",
+  justifyContent: "center",
+  maxWidth: "280px",      // ✅ 添加
+  alignSelf: "center",    // ✅ 添加
 },
 
 

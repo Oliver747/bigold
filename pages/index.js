@@ -108,7 +108,7 @@ export default function Home() {
 
       {/* 页脚（始终贴底） */}
       <footer style={styles.footer}>
-        Made by YIMO | 4Blue Light project on Mixin Inscription.
+        Made by YIMO | 5Blue Light project on Mixin Inscription.
       </footer>
     </div>
   );
@@ -174,6 +174,7 @@ const styles = {
       flexWrap: "wrap",
     gap: "0.4rem",
     marginBottom: "1rem",
+      width: "100%",
   },
   buttonRow: {
     display: "flex",
@@ -181,6 +182,7 @@ const styles = {
     gap: "0.4rem",
     marginBottom: "1rem",
     justifyContent: "center",
+      width: "100%",
   },
   mainButton: (bgColor) => ({
   padding: "10px 18px",

@@ -121,6 +121,7 @@ const styles = {
     margin: "0", // ✅ 添加这行
   padding: "0", // ✅ 添加这行
     overflowX: "hidden", // 防止横向滚动
+      boxsizing:"border-box",
     display: "flex",
     flexDirection: "column",
     background: "linear-gradient(to bottom right, #4f46e5, #9333ea)",
@@ -170,13 +171,14 @@ const styles = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    gap: "1rem",
+      flexWrap: "wrap",
+    gap: "0.5rem",
     marginBottom: "1rem",
   },
   buttonRow: {
     display: "flex",
     flexWrap: "wrap",
-    gap: "1rem",
+    gap: "0.5rem",
     marginBottom: "1rem",
     justifyContent: "center",
   },

@@ -198,9 +198,9 @@ const styles = {
   display: "flex",
   justifyContent: "center",
   flexWrap: "wrap",
-  gap: "0.5rem",
+  gap: "0.4rem",
   marginBottom: "1rem",
-  maxWidth: "280px", // ✅ 控制容器宽度
+  maxWidth: "260px", // ✅ 控制容器宽度
   marginLeft: "auto", // ✅ 居中
   marginRight: "auto",
 },
@@ -209,9 +209,9 @@ buttonRow: {
   display: "flex",
   justifyContent: "center",
   flexWrap: "wrap",
-  gap: "0.5rem",
+  gap: "0.4rem",
   marginBottom: "1rem",
-  maxWidth: "280px", // ✅ 一样处理
+  maxWidth: "260px", // ✅ 一样处理
   marginLeft: "auto",
   marginRight: "auto",
 },

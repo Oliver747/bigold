@@ -169,22 +169,24 @@ const styles = {
   },
 
   baseButton: {
-    padding: "10px 18px",
-    width: "calc(50% - 4px)",  // ✅ 自动宽度适配两列
-    height: "44px",
-    fontSize: "16px",
-    fontWeight: "bold",
-    border: "none",
-    borderRadius: "8px",
-    whiteSpace: "nowrap",
-    display: "inline-flex",
-    alignItems: "center",
-    justifyContent: "center",
-    cursor: "pointer",
-    transition: "0.2s ease",
-    flexShrink: 1,             // ✅ 防止按钮撑破容器
-    minWidth: 0,
-  },
+  padding: "10px 18px",
+  // ✅ 改动：删除 width 设置，改为 flex 自动撑开
+  flex: 1,
+  height: "44px",
+  fontSize: "16px",
+  fontWeight: "bold",
+  border: "none",
+  borderRadius: "8px",
+  whiteSpace: "nowrap",
+  display: "inline-flex",
+  alignItems: "center",
+  justifyContent: "center",
+  cursor: "pointer",
+  transition: "0.2s ease",
+  flexShrink: 1,
+  minWidth: 0,
+},
+
 
   navButton: {
     backgroundColor: "#e0f2f1",
@@ -197,24 +199,25 @@ const styles = {
   }),
 
   navRow: {
-    display: "flex",
-    justifyContent: "center",
-    gap: "0.5rem",
-    marginBottom: "1rem",
-    flexWrap: "wrap",
-    width: "100%",
-    maxWidth: "320px",
-  },
+  display: "flex",
+  justifyContent: "center",
+  gap: "0.5rem",
+  marginBottom: "1rem",
+  flexWrap: "wrap",
+  width: "100%",
+  maxWidth: "280px", // ✅ 改动：限制宽度，保证按钮在中间紧凑排列
+},
 
-  buttonRow: {
-    display: "flex",
-    justifyContent: "center",
-    gap: "0.5rem",
-    marginBottom: "1rem",
-    flexWrap: "wrap",
-    width: "100%",
-    maxWidth: "320px",
-  },
+buttonRow: {
+  display: "flex",
+  justifyContent: "center",
+  gap: "0.5rem",
+  marginBottom: "1rem",
+  flexWrap: "wrap",
+  width: "100%",
+  maxWidth: "280px", // ✅ 同样限制宽度
+},
+
 
   footer: {
     textAlign: "center",

@@ -195,6 +195,8 @@ width: "100%",
   fontSize: "16px",
   width: "110px",
   height: "44px",
+boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)", // 添加阴影
+  opacity: 0.5, // 设置整体透明度
   whiteSpace: "nowrap",
   transition: "0.2s ease",
   display: "inline-flex", // ✅ 保证内容不压缩变形
@@ -211,6 +213,8 @@ width: "100%",
   fontSize: "16px",
   width: "110px",
   height: "44px",
+boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)", // 添加阴影
+  opacity: 0.5, // 设置整体透明度
   whiteSpace: "nowrap",
   textAlign: "center",
   cursor: "pointer",

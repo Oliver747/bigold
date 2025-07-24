@@ -151,7 +151,7 @@ const styles = {
     height: "400px",
     backgroundColor: "#fff",
     borderRadius: "12px",
-    boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+    boxShadow: "0 5px 10px rgba(0,0,0,0.3)",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",

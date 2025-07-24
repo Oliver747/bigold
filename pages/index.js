@@ -124,7 +124,7 @@ const styles = {
       boxsizing:"border-box",
     display: "flex",
     flexDirection: "column",
-    background: "#0097a7",
+    background: "linear-gradient(to bottom right, #4878cb, #48c9c7",
     fontFamily: "Segoe UI, sans-serif",
     color: "#ffffff",
   },

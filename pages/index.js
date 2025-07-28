@@ -99,8 +99,8 @@ const styles = {
     marginBottom: 20,
   },
   avatar: {
-    width: "260px",
-    height: "auto",
+    width: "400px",
+    height: "400x",
     borderRadius: "12px",
     boxShadow: "0 8px 20px rgba(0,0,0,0.3)",
   },

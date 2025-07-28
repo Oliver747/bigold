@@ -36,6 +36,14 @@ export default function Home() {
     }
   };
 
+    useEffect(() => {
+    document.body.style.margin = "0";
+    document.body.style.padding = "0";
+    document.body.style.overflowX = "hidden";
+    document.documentElement.style.margin = "0";
+    document.documentElement.style.padding = "0";
+  }, []);
+  
   return (
     <div style={styles.page}>
       <div style={styles.container}>
@@ -79,17 +87,18 @@ export default function Home() {
 
 const styles = {
   page: {
-    backgroundColor: "#7BA8D1",
-    minHeight: "100vh",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "space-between",
-    alignItems: "center",
-    fontFamily: "sans-serif",
-    color: "#fff",
-    padding: "20px",
-    boxSizing: "border-box",
-  },
+   minHeight: "100vh",
+    width: "100vw", // 解决白边
+    margin: "0", // ✅ 添加这行
+  padding: "0", // ✅ 添加这行
+    overflowX: "hidden", // 防止横向滚动
+      boxsizing:"border-box",
+    display: "flex",
+    flexDirection: "column",
+    background: "linear-gradient(to bottom right, #4878cb, #48c9c7)",
+    fontFamily: "Segoe UI, sans-serif",
+    color: "#ffffff",
+  },
   container: {
     textAlign: "center",
     flexGrow: 1,

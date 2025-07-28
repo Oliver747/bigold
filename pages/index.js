@@ -1,13 +1,28 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const totalImages = 16;
 
 export default function Home() {
   const [history, setHistory] = useState([1]);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [imageError, setImageError] = useState(false);
 
   const currentImage = history[currentIndex];
   const imagePath = `/avatars/${currentImage}.webp`;
+
+  const handleGenerate = () => {
+    const newImage = Math.floor(Math.random() * totalImages) + 1;
+    setHistory([...history.slice(0, currentIndex + 1), newImage]);
+    setCurrentIndex(currentIndex + 1);
+    setImageError(false);
+  };
+
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = imagePath;
+    link.download = `avatar_${currentImage}.webp`;
+    link.click();
+  };
 
   const handlePrev = () => {
     if (currentIndex > 0) {
@@ -21,207 +36,137 @@ export default function Home() {
     }
   };
 
-  const handleGenerate = () => {
-    const newId = Math.floor(Math.random() * totalImages) + 1;
-    const newHistory = history.slice(0, currentIndex + 1);
-    newHistory.push(newId);
-    setHistory(newHistory);
-    setCurrentIndex(newHistory.length - 1);
-  };
-
-  const handleDownload = () => {
-    const link = document.createElement("a");
-    link.href = imagePath;
-    link.download = `avatar_${currentImage}.webp`;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
   return (
-    <div
-      className="min-h-screen flex flex-col items-center justify-between bg-[#7da7d9] text-white"
-      style={{ fontFamily: "sans-serif" }}
-    >
-      {/* 主头像 */}
-      <div className="relative mt-8 mb-4 w-full flex justify-center">
-        <img
-          src={imagePath}
-          alt="Avatar"
-          className="w-72 h-72 object-cover rounded-2xl shadow-lg"
-        />
+    <div style={styles.page}>
+      <div style={styles.container}>
+        <div style={styles.avatarWrapper}>
+          <img
+            key={currentImage}
+            src={imagePath}
+            alt="avatar"
+            style={styles.avatar}
+            onError={() => setImageError(true)}
+          />
+          {!imageError && (
+            <>
+              <img src={imagePath} style={styles.cornerLeft} />
+              <img src={imagePath} style={styles.cornerRight} />
+            </>
+          )}
+        </div>
 
-        {/* 左下角方形头像 */}
-        <img
-          src={imagePath}
-          alt="corner-left"
-          className="absolute left-4 bottom-[-20px] w-16 h-16 rounded-lg border-2 border-white z-10"
-        />
+        <div style={styles.title}>
+          BLUE LIGHT <span style={styles.imageId}>#{currentImage}</span>
+        </div>
+        <div style={styles.subtitle}>BASED ON MIXIN INSCRIPTION</div>
 
-        {/* 右下角圆形头像 */}
-        <img
-          src={imagePath}
-          alt="corner-right"
-          className="absolute right-4 bottom-[-20px] w-16 h-16 rounded-full border-2 border-white z-10"
-        />
+        <div style={styles.buttonRow}>
+          <button style={styles.button} onClick={handlePrev}>PREV</button>
+          <button style={styles.button} onClick={handleNext}>NEXT</button>
+        </div>
+        <div style={styles.buttonRow}>
+          <button style={styles.button} onClick={handleGenerate}>RANDOM</button>
+          <button style={styles.button} onClick={handleDownload}>DOWNLOAD</button>
+        </div>
       </div>
 
-      {/* 标题文字 */}
-      <div className="text-center text-lg mb-6">
-        <div className="font-bold text-2xl">BLUE LIGHT #{currentImage}</div>
-        <div className="text-sm mt-1 tracking-wide">BASED ON MIXIN INSCRIPTION</div>
-      </div>
-
-      {/* 按钮区 */}
-      <div className="grid grid-cols-2 gap-4 mb-8">
-        <button
-          onClick={handlePrev}
-          className="bg-white text-[#1a2e46] px-6 py-2 rounded shadow-md text-lg font-semibold hover:opacity-90"
-        >
-          PREV
-        </button>
-        <button
-          onClick={handleNext}
-          className="bg-white text-[#1a2e46] px-6 py-2 rounded shadow-md text-lg font-semibold hover:opacity-90"
-        >
-          NEXT
-        </button>
-        <button
-          onClick={handleGenerate}
-          className="bg-white text-[#1a2e46] px-6 py-2 rounded shadow-md text-lg font-semibold hover:opacity-90"
-        >
-          RANDOM
-        </button>
-        <button
-          onClick={handleDownload}
-          className="bg-white text-[#1a2e46] px-6 py-2 rounded shadow-md text-lg font-semibold hover:opacity-90"
-        >
-          DOWNLOAD
-        </button>
-      </div>
-
-      {/* 页脚 */}
-      <footer className="w-full text-center text-xs text-white py-4 bg-transparent">
-        © 2025 Avatar Generator. All rights reserved.
+      <footer style={styles.footer}>
+        <p>© 2025 Avatar Generator. All rights reserved.</p>
       </footer>
     </div>
   );
 }
+
 const styles = {
-  container: {
-    minHeight: "100vh",
-    width: "100vw",
-    backgroundColor: "#91b5e6",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-    fontFamily: "Segoe UI, sans-serif",
-    color: "#ffffff",
-    position: "relative",
-    overflow: "hidden",
-  },
-
-  imageWrapper: {
-    position: "relative",
-    width: "360px",
-    height: "360px",
-    borderRadius: "16px",
-    overflow: "hidden",
-    marginBottom: "2rem",
-    boxShadow: "0 6px 12px rgba(0, 0, 0, 0.3)",
-  },
-
-  mainImage: {
-    width: "100%",
-    height: "100%",
-    objectFit: "cover",
-    borderRadius: "16px",
-  },
-
-  bottomLeftImage: {
-    position: "absolute",
-    bottom: "10px",
-    left: "10px",
-    width: "80px",
-    height: "80px",
-    objectFit: "cover",
-    borderRadius: "12px",
-    border: "3px solid white",
-    backgroundColor: "#fff",
-    zIndex: 2,
-  },
-
-  bottomRightImage: {
-    position: "absolute",
-    bottom: "10px",
-    right: "10px",
-    width: "100px",
-    height: "100px",
-    borderRadius: "50%",
-    objectFit: "cover",
-    border: "3px solid white",
-    backgroundColor: "#fff",
-    zIndex: 2,
-  },
-
-  titleBox: {
-    textAlign: "center",
-    marginBottom: "2rem",
-  },
-
-  title: {
-    fontSize: "24px",
-    fontWeight: "bold",
-    letterSpacing: "2px",
-    margin: 0,
-    color: "#ffffff",
-  },
-
-  subtitle: {
-    fontSize: "14px",
-    letterSpacing: "1px",
-    color: "#e0f7fa",
-    margin: 0,
-    marginTop: "0.5rem",
-  },
-
-  buttonRow: {
-    display: "flex",
-    gap: "1rem",
-    marginBottom: "1rem",
-    flexWrap: "wrap",
-    justifyContent: "center",
-  },
-
-  button: {
-    padding: "10px 18px",
-    backgroundColor: "#6b90c7",
-    color: "#fff",
-    border: "none",
-    borderRadius: "8px",
-    fontWeight: "bold",
-    fontSize: "16px",
-    width: "130px",
-    height: "44px",
-    boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)",
-    opacity: 0.95,
-    cursor: "pointer",
-    transition: "all 0.2s ease-in-out",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-
-  footer: {
-    textAlign: "center",
-    fontSize: "14px",
-    color: "#ffffff",
-    padding: "1rem",
-    borderTop: "1px solid rgba(255, 255, 255, 0.2)",
-    background: "transparent",
-    marginTop: "auto",
-    width: "100%",
-    boxSizing: "border-box",
-  },
+  page: {
+    backgroundColor: "#7BA8D1",
+    minHeight: "100vh",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+    alignItems: "center",
+    fontFamily: "sans-serif",
+    color: "#fff",
+    padding: "20px",
+    boxSizing: "border-box",
+  },
+  container: {
+    textAlign: "center",
+    flexGrow: 1,
+  },
+  avatarWrapper: {
+    position: "relative",
+    marginBottom: 20,
+  },
+  avatar: {
+    width: "260px",
+    height: "auto",
+    borderRadius: "12px",
+    boxShadow: "0 8px 20px rgba(0,0,0,0.3)",
+  },
+  cornerLeft: {
+    position: "absolute",
+    bottom: "-20px",
+    left: "-20px",
+    width: "80px",
+    height: "80px",
+    borderRadius: "16px",
+    objectFit: "cover",
+    border: "3px solid white",
+    zIndex: 10,
+    background: "#7BA8D1",
+  },
+  cornerRight: {
+    position: "absolute",
+    bottom: "-20px",
+    right: "-20px",
+    width: "80px",
+    height: "80px",
+    borderRadius: "50%",
+    objectFit: "cover",
+    border: "3px solid white",
+    zIndex: 10,
+    background: "#7BA8D1",
+  },
+  title: {
+    fontSize: "24px",
+    fontWeight: "bold",
+    marginTop: "40px",
+  },
+  imageId: {
+    fontSize: "20px",
+    fontWeight: "normal",
+    marginLeft: "10px",
+  },
+  subtitle: {
+    fontSize: "14px",
+    marginBottom: "30px",
+    marginTop: "5px",
+  },
+  buttonRow: {
+    display: "flex",
+    justifyContent: "center",
+    gap: "20px",
+    marginBottom: "20px",
+  },
+  button: {
+    padding: "12px 24px",
+    backgroundColor: "#A9C6E8",
+    border: "none",
+    borderRadius: "8px",
+    cursor: "pointer",
+    fontSize: "16px",
+    fontWeight: "bold",
+    boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
+    color: "#1e1e1e",
+    textAlign: "center",
+  },
+  footer: {
+    marginTop: "20px",
+    padding: "10px 0",
+    width: "100%",
+    textAlign: "center",
+    fontSize: "14px",
+    color: "#e0e0e0",
+  },
 };

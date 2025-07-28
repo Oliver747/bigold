@@ -11,6 +11,7 @@ export default function Home() {
   const imagePath = `/avatars/${currentImage}.webp`;
 
   const handleGenerate = () => {
+    if (totalImages <= 1) return;
     let random = Math.floor(Math.random() * totalImages) + 1;
     while (random === currentImage) {
       random = Math.floor(Math.random() * totalImages) + 1;
@@ -24,7 +25,7 @@ export default function Home() {
 
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = imagePath;
+    link.href = `${window.location.origin}${imagePath}`;
     link.download = `${currentImage}.webp`;
     document.body.appendChild(link);
     link.click();
@@ -51,65 +52,55 @@ export default function Home() {
 
   return (
     <div style={styles.container}>
-      {/* 左上角 Logo */}
-      <div style={styles.logo}>
-        <img src="/logo.png" alt="Logo" style={{ height: "40px" }} />
+      {/* 主头像展示 */}
+      <div style={styles.imageWrapper}>
+        <img
+          src={imageError ? "/fallback.webp" : imagePath}
+          alt="avatar"
+          onError={() => setImageError(true)}
+          style={styles.mainImage}
+        />
+
+        {/* 左下小方图 */}
+        <img
+          src={imageError ? "/fallback.webp" : imagePath}
+          alt="small avatar"
+          style={styles.bottomLeftImage}
+        />
+
+        {/* 右下圆图 */}
+        <img
+          src={imageError ? "/fallback.webp" : imagePath}
+          alt="round avatar"
+          style={styles.bottomRightImage}
+        />
       </div>
 
-      {/* 主内容区域 */}
-      <div style={styles.main}>
-        <h1 style={styles.title}> </h1>
-
-        <div style={styles.imageBox}>
-          <img
-            src={imageError ? "/fallback.webp" : imagePath}
-            alt="avatar"
-            onError={() => setImageError(true)}
-            style={styles.image}
-          />
-        </div>
-
-        <p style={styles.imageId}>#{currentImage}</p>
-
-        {/* 上/下一张按钮组 */}
-        <div style={styles.navRow}>
-          <button
-            onClick={goBack}
-            disabled={currentIndex === 0}
-            style={styles.navButton}
-          >
-            Prev
-          </button>
-          <button
-            onClick={goForward}
-            disabled={currentIndex === history.length - 1}
-            style={styles.navButton}
-          >
-            Next
-          </button>
-        </div>
-
-        {/* 随机/下载按钮组 */}
-        <div style={styles.buttonRow}>
-          <button
-            onClick={handleGenerate}
-            style={styles.mainButton("#00796b")}
-          >
-            Random
-          </button>
-          <button
-            onClick={handleDownload}
-            style={styles.mainButton("#0097a7")}
-          >
-            Download
-          </button>
-        </div>
+      {/* 标题 */}
+      <div style={styles.titleBox}>
+        <h2 style={styles.title}>BLUE LIGHT</h2>
+        <p style={styles.subtitle}>BASED ON MIXIN INSCRIPTION</p>
       </div>
 
-      {/* 页脚（始终贴底） */}
-      <footer style={styles.footer}>
-        Made by YIMO | 11Blue Light
-      </footer>
+      {/* 上/下一张按钮 */}
+      <div style={styles.buttonRow}>
+        <button onClick={goBack} disabled={currentIndex === 0} style={styles.button}>
+          PREV
+        </button>
+        <button onClick={goForward} disabled={currentIndex === history.length - 1} style={styles.button}>
+          NEXT
+        </button>
+      </div>
+
+      {/* 随机/下载按钮 */}
+      <div style={styles.buttonRow}>
+        <button onClick={handleGenerate} style={styles.button}>
+          RANDOM
+        </button>
+        <button onClick={handleDownload} style={styles.button}>
+          DOWNLOAD
+        </button>
+      </div>
     </div>
   );
 }
@@ -117,121 +108,101 @@ export default function Home() {
 const styles = {
   container: {
     minHeight: "100vh",
-    width: "100vw", // 解决白边
-    margin: "0", // ✅ 添加这行
-  padding: "0", // ✅ 添加这行
-    overflowX: "hidden", // 防止横向滚动
-      boxsizing:"border-box",
+    width: "100vw",
+    backgroundColor: "#91b5e6", // 贴近图中背景色
     display: "flex",
     flexDirection: "column",
-    background: "linear-gradient(to bottom right, #4878cb, #48c9c7)",
+    alignItems: "center",
+    justifyContent: "center",
     fontFamily: "Segoe UI, sans-serif",
     color: "#ffffff",
+    position: "relative",
+    overflow: "hidden",
   },
-  logo: {
+
+  imageWrapper: {
+    position: "relative",
+    width: "320px",
+    height: "320px",
+    borderRadius: "16px",
+    overflow: "hidden",
+    marginBottom: "2rem",
+    boxShadow: "0 6px 12px rgba(0, 0, 0, 0.3)",
+  },
+
+  mainImage: {
+    width: "100%",
+    height: "100%",
+    objectFit: "cover",
+    borderRadius: "16px",
+  },
+
+  bottomLeftImage: {
     position: "absolute",
-    top: 20,
-    left: 20,
-  },
-  main: {
-    flex: 1,
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    padding: "2rem 1rem",
-    justifyContent: "center",
-  },
-  title: {
-    fontSize: "2rem",
-    color: "#00796b",
-    marginBottom: "1.5rem",
-  },
-  imageBox: {
-    width: "400px",
-    height: "400px",
-    backgroundColor: "#fff",
+    bottom: "-20px",
+    left: "-20px",
+    width: "80px",
+    height: "80px",
+    objectFit: "cover",
     borderRadius: "12px",
-    boxShadow: "0 5px 10px rgba(0,0,0,0.3)",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    marginBottom: "1rem",
+    border: "3px solid white",
+    backgroundColor: "#fff",
   },
-  image: {
-    maxWidth: "100%",
-    maxHeight: "100%",
-    borderRadius: "10px",
+
+  bottomRightImage: {
+    position: "absolute",
+    bottom: "-25px",
+    right: "-25px",
+    width: "100px",
+    height: "100px",
+    borderRadius: "50%",
+    objectFit: "cover",
+    border: "3px solid white",
+    backgroundColor: "#fff",
   },
-  imageId: {
+
+  titleBox: {
+    textAlign: "center",
+    marginBottom: "2rem",
+  },
+
+  title: {
+    fontSize: "24px",
     fontWeight: "bold",
-    color: "#fff",
-    marginBottom: "1rem",
+    letterSpacing: "2px",
+    margin: 0,
+    color: "#ffffff",
   },
-  navRow: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-      flexWrap: "wrap",
-    gap: "0.1rem",
-    marginBottom: "1rem",
-width: "100%",
+
+  subtitle: {
+    fontSize: "14px",
+    letterSpacing: "1px",
+    color: "#e0f7fa",
+    margin: 0,
+    marginTop: "0.5rem",
   },
+
   buttonRow: {
     display: "flex",
-    flexWrap: "wrap",
-    gap: "0.1rem",
+    gap: "1rem",
     marginBottom: "1rem",
+    flexWrap: "wrap",
     justifyContent: "center",
-width: "100%",
   },
-  mainButton: (bgColor) => ({
-  padding: "10px 18px",
-  backgroundColor: bgColor,
-  color: "#ffffff",
-  border: "none",
-  borderRadius: "8px",
-  cursor: "pointer",
-  fontWeight: "bold",
-  fontSize: "16px",
-  width: "110px",
-  height: "44px",
-boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)", // 添加阴影
-  opacity: 0.5, // 设置整体透明度
-  whiteSpace: "nowrap",
-  transition: "0.2s ease",
-  display: "inline-flex", // ✅ 保证内容不压缩变形
-  alignItems: "center",
-  justifyContent: "center",
-}),
-  navButton: {
+
+  button: {
     padding: "10px 18px",
-  backgroundColor: "#00796b",
-  color: "#ffffff",
-  border: "none",
-  borderRadius: "8px",
-  fontWeight: "bold",
-  fontSize: "16px",
-  width: "110px",
-  height: "44px",
-boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)", // 添加阴影
-  opacity: 0.5, // 设置整体透明度
-  whiteSpace: "nowrap",
-  textAlign: "center",
-  cursor: "pointer",
-  transition: "0.2s ease",
-  display: "inline-flex",
-  alignItems: "center",
-  justifyContent: "center",
-},
-  footer: {
-  textAlign: "center",
-  fontSize: "14px",
-  color: "#ffffff",
-  padding: "1rem",
-  borderTop: "1px solid rgba(255, 255, 255, 0.2)",
-  background: "transparent",
-  marginTop: "auto",
-  width: "100%",
-boxSizing: "border-box",
-}
+    backgroundColor: "#6b90c7",
+    color: "#fff",
+    border: "none",
+    borderRadius: "8px",
+    fontWeight: "bold",
+    fontSize: "16px",
+    width: "130px",
+    height: "44px",
+    boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)",
+    opacity: 0.95,
+    cursor: "pointer",
+    transition: "all 0.2s ease-in-out",
+  },
 };

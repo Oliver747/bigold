@@ -8,7 +8,7 @@ export default function Home() {
   const [imageError, setImageError] = useState(false);
 
   const currentImage = history[currentIndex];
-  const imagePath = /avatars/${currentImage}.webp;
+  const imagePath = `/avatars/${currentImage}.webp`;
 
   const handleGenerate = () => {
     const newImage = Math.floor(Math.random() * totalImages) + 1;
@@ -20,7 +20,7 @@ export default function Home() {
   const handleDownload = () => {
     const link = document.createElement("a");
     link.href = imagePath;
-    link.download = avatar_${currentImage}.webp;
+    link.download = `avatar_${currentImage}.webp`;
     link.click();
   };
 

@@ -107,3 +107,121 @@ export default function Home() {
     </div>
   );
 }
+const styles = {
+  container: {
+    minHeight: "100vh",
+    width: "100vw",
+    backgroundColor: "#91b5e6",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    fontFamily: "Segoe UI, sans-serif",
+    color: "#ffffff",
+    position: "relative",
+    overflow: "hidden",
+  },
+
+  imageWrapper: {
+    position: "relative",
+    width: "360px",
+    height: "360px",
+    borderRadius: "16px",
+    overflow: "hidden",
+    marginBottom: "2rem",
+    boxShadow: "0 6px 12px rgba(0, 0, 0, 0.3)",
+  },
+
+  mainImage: {
+    width: "100%",
+    height: "100%",
+    objectFit: "cover",
+    borderRadius: "16px",
+  },
+
+  bottomLeftImage: {
+    position: "absolute",
+    bottom: "10px",
+    left: "10px",
+    width: "80px",
+    height: "80px",
+    objectFit: "cover",
+    borderRadius: "12px",
+    border: "3px solid white",
+    backgroundColor: "#fff",
+    zIndex: 2,
+  },
+
+  bottomRightImage: {
+    position: "absolute",
+    bottom: "10px",
+    right: "10px",
+    width: "100px",
+    height: "100px",
+    borderRadius: "50%",
+    objectFit: "cover",
+    border: "3px solid white",
+    backgroundColor: "#fff",
+    zIndex: 2,
+  },
+
+  titleBox: {
+    textAlign: "center",
+    marginBottom: "2rem",
+  },
+
+  title: {
+    fontSize: "24px",
+    fontWeight: "bold",
+    letterSpacing: "2px",
+    margin: 0,
+    color: "#ffffff",
+  },
+
+  subtitle: {
+    fontSize: "14px",
+    letterSpacing: "1px",
+    color: "#e0f7fa",
+    margin: 0,
+    marginTop: "0.5rem",
+  },
+
+  buttonRow: {
+    display: "flex",
+    gap: "1rem",
+    marginBottom: "1rem",
+    flexWrap: "wrap",
+    justifyContent: "center",
+  },
+
+  button: {
+    padding: "10px 18px",
+    backgroundColor: "#6b90c7",
+    color: "#fff",
+    border: "none",
+    borderRadius: "8px",
+    fontWeight: "bold",
+    fontSize: "16px",
+    width: "130px",
+    height: "44px",
+    boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)",
+    opacity: 0.95,
+    cursor: "pointer",
+    transition: "all 0.2s ease-in-out",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+
+  footer: {
+    textAlign: "center",
+    fontSize: "14px",
+    color: "#ffffff",
+    padding: "1rem",
+    borderTop: "1px solid rgba(255, 255, 255, 0.2)",
+    background: "transparent",
+    marginTop: "auto",
+    width: "100%",
+    boxSizing: "border-box",
+  },
+};

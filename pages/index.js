@@ -106,8 +106,8 @@ const styles = {
   },
   cornerLeft: {
     position: "absolute",
-    bottom: "-20px",
-    left: "-20px",
+    bottom: "-40px",
+    left: "5px",
     width: "80px",
     height: "80px",
     borderRadius: "16px",
@@ -118,8 +118,8 @@ const styles = {
   },
   cornerRight: {
     position: "absolute",
-    bottom: "-20px",
-    right: "-20px",
+    bottom: "-40px",
+    right: "5px",
     width: "80px",
     height: "80px",
     borderRadius: "50%",

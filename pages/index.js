@@ -120,8 +120,8 @@ const styles = {
     position: "absolute",
     bottom: "-50px",
     left: "5px",
-    width: "105px",
-    height: "105px",
+    width: "100px",
+    height: "100px",
     borderRadius: "16px",
     objectFit: "cover",
     border: "0px solid white",
@@ -145,7 +145,7 @@ const styles = {
   title: {
     fontSize: "24px",
     fontWeight: "bold",
-    marginTop: "40px",
+    marginTop: "50px",
     textShadow: "1px 1px 2px rgba(0, 0, 0, 0.3)"
   },
   imageId: {
@@ -175,12 +175,12 @@ const styles = {
   cursor: "pointer",
   fontSize: "16px",
   color: "#fff",                      // ✅ 字体白色
-  backgroundColor: "rgba(240,245,250, 0.4)",        // ✅ 默认背景（你也可以自定义）
+  backgroundColor: "rgba(240,245,250, 0.3)",        // ✅ 默认背景（你也可以自定义）
   boxShadow: "2px 2px 5px rgba(0,0,0,0.4)", // ✅ 灰色右下阴影
 },
 
   footer: {
-    marginTop: "20px",
+    marginTop: "10px",
     padding: "10px 0",
     width: "100%",
     textAlign: "center",

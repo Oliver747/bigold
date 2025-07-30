@@ -108,12 +108,12 @@ const styles = {
   avatarWrapper: {
     position: "relative",
     marginBottom: 20,
-    minHeight: "440px",
+    minHeight: "400px",
   },
   avatar: {
     width: "400px",
     height: "400x",
-    borderRadius: "12px",
+    borderRadius: "0px",
     boxShadow: "0 8px 20px rgba(0,0,0,0.3)",
   },
   cornerLeft: {
@@ -124,8 +124,9 @@ const styles = {
     height: "80px",
     borderRadius: "16px",
     objectFit: "cover",
-    border: "3px solid white",
+    border: "0px solid white",
     zIndex: 10,
+    boxShadow: "0 4px 8px rgba(128,128,128,0.4)", // ✅ 灰色阴影
     background: "#7BA8D1",
   },
   cornerRight: {
@@ -136,8 +137,9 @@ const styles = {
     height: "80px",
     borderRadius: "50%",
     objectFit: "cover",
-    border: "3px solid white",
+    border: "0px solid white",
     zIndex: 10,
+    boxShadow: "0 4px 8px rgba(128,128,128,0.4)", // ✅ 灰色阴影
     background: "#7BA8D1",
   },
   title: {

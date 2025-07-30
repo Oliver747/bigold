@@ -126,7 +126,7 @@ const styles = {
     objectFit: "cover",
     border: "0px solid white",
     zIndex: 10,
-    boxShadow: "4px 4px 5px rgba(0,0,0,0.5)", // ✅ 灰色阴影
+    boxShadow: "0px 2px 7px rgba(0,0,0,0.5)", // ✅ 灰色阴影
     background: "#7BA8D1",
   },
   cornerRight: {
@@ -139,7 +139,7 @@ const styles = {
     objectFit: "cover",
     border: "0px solid white",
     zIndex: 10,
-    boxShadow: "4px 4px 5px rgba(0,0,0,0.5)", // ✅ 灰色阴影
+    boxShadow: "0px 2px 7px rgba(0,0,0,0.5)", // ✅ 灰色阴影
     background: "#7BA8D1",
   },
   title: {
@@ -164,7 +164,7 @@ const styles = {
     marginBottom: "20px",
   },
   button: {
-  flex: 1,                            // ✅ 每个按钮宽度一致
+  flex: "0 0 33%",                            // ✅ 每个按钮宽度一致
   margin: "0 5px",                    // ✅ 保持间隔
   padding: "10px 0",                  // ✅ 上下 padding，左右 padding 取消
   border: "none",
@@ -172,8 +172,8 @@ const styles = {
   cursor: "pointer",
   fontSize: "16px",
   color: "#fff",                      // ✅ 字体白色
-  backgroundColor: "#007bff",        // ✅ 默认背景（你也可以自定义）
-  boxShadow: "2px 2px 5px rgba(128,128,128,0.4)", // ✅ 灰色右下阴影
+  backgroundColor: "rgba(0, 123, 255, 0.7)",        // ✅ 默认背景（你也可以自定义）
+  boxShadow: "2px 2px 5px rgba(0,0,0,0.4)", // ✅ 灰色右下阴影
 },
 
   footer: {

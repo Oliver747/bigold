@@ -146,16 +146,19 @@ const styles = {
     fontSize: "24px",
     fontWeight: "bold",
     marginTop: "40px",
+    textShadow: "1px 1px 2px rgba(0, 0, 0, 0.3)"
   },
   imageId: {
-    fontSize: "20px",
-    fontWeight: "normal",
+    fontSize: "24px",
+    fontWeight: "bold",
     marginLeft: "10px",
+    textShadow: "1px 1px 2px rgba(0, 0, 0, 0.3)"
   },
   subtitle: {
     fontSize: "14px",
     marginBottom: "30px",
     marginTop: "5px",
+    textShadow: "1px 1px 2px rgba(0, 0, 0, 0.3)"
   },
   buttonRow: {
     display: "flex",
@@ -168,11 +171,12 @@ const styles = {
   margin: "0 5px",                    // ✅ 保持间隔
   padding: "10px 0",                  // ✅ 上下 padding，左右 padding 取消
   border: "none",
-  borderRadius: "5px",
+  borderRadius: "16px",
   cursor: "pointer",
+  textShadow: "1px 1px 2px rgba(0, 0, 0, 0.3)"
   fontSize: "16px",
   color: "#fff",                      // ✅ 字体白色
-  backgroundColor: "rgba(0, 123, 255, 0.7)",        // ✅ 默认背景（你也可以自定义）
+  backgroundColor: "rgba(128,128,128, 0.4)",        // ✅ 默认背景（你也可以自定义）
   boxShadow: "2px 2px 5px rgba(0,0,0,0.4)", // ✅ 灰色右下阴影
 },
 

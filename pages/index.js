@@ -118,10 +118,10 @@ const styles = {
   },
   cornerLeft: {
     position: "absolute",
-    bottom: "-40px",
+    bottom: "-50px",
     left: "5px",
-    width: "80px",
-    height: "80px",
+    width: "105px",
+    height: "105px",
     borderRadius: "16px",
     objectFit: "cover",
     border: "0px solid white",
@@ -133,8 +133,8 @@ const styles = {
     position: "absolute",
     bottom: "-40px",
     right: "5px",
-    width: "80px",
-    height: "80px",
+    width: "120px",
+    height: "120px",
     borderRadius: "50%",
     objectFit: "cover",
     border: "0px solid white",
@@ -175,7 +175,7 @@ const styles = {
   cursor: "pointer",
   fontSize: "16px",
   color: "#fff",                      // ✅ 字体白色
-  backgroundColor: "rgba(128,128,128, 0.4)",        // ✅ 默认背景（你也可以自定义）
+  backgroundColor: "rgba(240,245,250, 0.4)",        // ✅ 默认背景（你也可以自定义）
   boxShadow: "2px 2px 5px rgba(0,0,0,0.4)", // ✅ 灰色右下阴影
 },
 

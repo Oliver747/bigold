@@ -112,9 +112,9 @@ const styles = {
   },
   avatar: {
     width: "400px",
-    height: "400x",
-    borderRadius: "0px",
-    boxShadow: "0 8px 20px rgba(0,0,0,0.3)",
+    height: "400px",
+    borderRadius: "10px",// ✅ 圆角
+    boxShadow: "0 8px 15px rgba(0,0,0,0.4)",
   },
   cornerLeft: {
     position: "absolute",
@@ -126,7 +126,7 @@ const styles = {
     objectFit: "cover",
     border: "0px solid white",
     zIndex: 10,
-    boxShadow: "0 4px 8px rgba(128,128,128,0.4)", // ✅ 灰色阴影
+    boxShadow: "4px 4px 5px rgba(0,0,0,0.5)", // ✅ 灰色阴影
     background: "#7BA8D1",
   },
   cornerRight: {
@@ -139,7 +139,7 @@ const styles = {
     objectFit: "cover",
     border: "0px solid white",
     zIndex: 10,
-    boxShadow: "0 4px 8px rgba(128,128,128,0.4)", // ✅ 灰色阴影
+    boxShadow: "4px 4px 5px rgba(0,0,0,0.5)", // ✅ 灰色阴影
     background: "#7BA8D1",
   },
   title: {
@@ -164,17 +164,18 @@ const styles = {
     marginBottom: "20px",
   },
   button: {
-    padding: "12px 24px",
-    backgroundColor: "#A9C6E8",
-    border: "none",
-    borderRadius: "8px",
-    cursor: "pointer",
-    fontSize: "16px",
-    fontWeight: "bold",
-    boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
-    color: "#1e1e1e",
-    textAlign: "center",
-  },
+  flex: 1,                            // ✅ 每个按钮宽度一致
+  margin: "0 5px",                    // ✅ 保持间隔
+  padding: "10px 0",                  // ✅ 上下 padding，左右 padding 取消
+  border: "none",
+  borderRadius: "5px",
+  cursor: "pointer",
+  fontSize: "16px",
+  color: "#fff",                      // ✅ 字体白色
+  backgroundColor: "#007bff",        // ✅ 默认背景（你也可以自定义）
+  boxShadow: "2px 2px 5px rgba(128,128,128,0.4)", // ✅ 灰色右下阴影
+},
+
   footer: {
     marginTop: "20px",
     padding: "10px 0",

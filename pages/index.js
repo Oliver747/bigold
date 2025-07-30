@@ -108,6 +108,7 @@ const styles = {
   avatarWrapper: {
     position: "relative",
     marginBottom: 20,
+    minHeight: "440px",
   },
   avatar: {
     width: "400px",

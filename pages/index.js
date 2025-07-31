@@ -186,7 +186,7 @@ buttonGroup: {
 },
 
   footer: {
-    marginTop: "10px",
+    marginTop: "1px",
     padding: "10px 0",
     width: "100%",
     textAlign: "center",

@@ -106,6 +106,7 @@ const styles = {
   container: {
     textAlign: "center",
     flexGrow: 1,
+  flex: 1, // 加在 styles.container 中
   },
   avatarWrapper: {
     position: "relative",

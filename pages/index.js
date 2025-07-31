@@ -182,7 +182,7 @@ const styles = {
 },
 
 buttonGroup: {
-  marginTop: "20px", // ← 控制整体向下偏移的距离，自行调大或调小
+  marginTop: "50px", // ← 控制整体向下偏移的距离，自行调大或调小
 },
 
   footer: {

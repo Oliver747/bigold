@@ -66,22 +66,22 @@ export default function Home() {
         <div style={styles.title}>
           BLUE LIGHT <span style={styles.imageId}>#{currentImage}</span>
         </div>
-        <div style={styles.subtitle}>BASED ON MIXIN INSCRIPTION</div>
+        <div style={styles.subtitle}>Based on Mixin Inscription</div>
 
         <div style={styles.buttonGroup}>
   <div style={styles.buttonRow}>
-    <button style={styles.button} onClick={handlePrev}>PREV</button>
-    <button style={styles.button} onClick={handleNext}>NEXT</button>
+    <button style={styles.button} onClick={handlePrev}>Prev</button>
+    <button style={styles.button} onClick={handleNext}>Next</button>
   </div>
   <div style={styles.buttonRow}>
-    <button style={styles.button} onClick={handleGenerate}>RANDOM</button>
-    <button style={styles.button} onClick={handleDownload}>DOWNLOAD</button>
+    <button style={styles.button} onClick={handleGenerate}>Random</button>
+    <button style={styles.button} onClick={handleDownload}>Download</button>
   </div>
 </div>
       </div>
 
       <footer style={styles.footer}>
-        <p>© 2025 Avatar Generator. All rights reserved.</p>
+        <p>© 2025 Bigold Club. All rights reserved.</p>
       </footer>
     </div>
   );

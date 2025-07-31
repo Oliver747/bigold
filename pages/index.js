@@ -11,7 +11,7 @@ export default function Home() {
   const imagePath = `/avatars/${currentImage}.webp`;
 
   const handleGenerate = () => {
-    const newImage = Math.floor(Math.random() * totalImages) + 1;
+    const newImage = Math.floor(Math.random() * totalImages);
     setHistory([...history.slice(0, currentIndex + 1), newImage]);
     setCurrentIndex(currentIndex + 1);
     setImageError(false);

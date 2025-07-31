@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 const totalImages = 16;
 
 export default function Home() {
-  const [history, setHistory] = useState([1]);
+  const [history, setHistory] = useState([0]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [imageError, setImageError] = useState(false);
 
@@ -68,14 +68,16 @@ export default function Home() {
         </div>
         <div style={styles.subtitle}>BASED ON MIXIN INSCRIPTION</div>
 
-        <div style={styles.buttonRow}>
-          <button style={styles.button} onClick={handlePrev}>PREV</button>
-          <button style={styles.button} onClick={handleNext}>NEXT</button>
-        </div>
-        <div style={styles.buttonRow}>
-          <button style={styles.button} onClick={handleGenerate}>RANDOM</button>
-          <button style={styles.button} onClick={handleDownload}>DOWNLOAD</button>
-        </div>
+        <div style={styles.buttonGroup}>
+  <div style={styles.buttonRow}>
+    <button style={styles.button} onClick={handlePrev}>PREV</button>
+    <button style={styles.button} onClick={handleNext}>NEXT</button>
+  </div>
+  <div style={styles.buttonRow}>
+    <button style={styles.button} onClick={handleGenerate}>RANDOM</button>
+    <button style={styles.button} onClick={handleDownload}>DOWNLOAD</button>
+  </div>
+</div>
       </div>
 
       <footer style={styles.footer}>
@@ -177,6 +179,10 @@ const styles = {
   color: "#fff",                      // ✅ 字体白色
   backgroundColor: "rgba(240,245,250, 0.3)",        // ✅ 默认背景（你也可以自定义）
   boxShadow: "2px 2px 5px rgba(0,0,0,0.4)", // ✅ 灰色右下阴影
+},
+
+buttonGroup: {
+  marginTop: "20px", // ← 控制整体向下偏移的距离，自行调大或调小
 },
 
   footer: {

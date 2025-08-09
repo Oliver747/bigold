@@ -1,0 +1,20 @@
+{
+    "audioVolume": 0,
+    "closeLibrarType": "5",
+    "closeLibraryId": "0",
+    "cloudLocalFolderId": "1",
+    "coverPath": "",
+    "createdDefaultCloudLocalFolder": true,
+    "createdDefaultDownloadFolder": false,
+    "downloadFolderId": "0",
+    "downloadFolderName": "文件夹",
+    "folders": [
+    ],
+    "importType": 0,
+    "libraryName": "blue",
+    "openedColorOptimize": true,
+    "previewType": 0,
+    "tag_ids": [
+    ],
+    "videoVolume": 0
+}

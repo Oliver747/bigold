@@ -7,8 +7,8 @@ const [history, setHistory] = useState(["#0"]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [imageError, setImageError] = useState(false);
 
-  const currentImage = history[currentIndex];
-const imagePath = `/avatars/${encodeURIComponent(currentImage)}.webp`;
+ const currentImage = history[currentIndex];
+const imagePath = `/avatars/%23${currentImage}.webp`;
 
   const handleGenerate = () => {
     const newImage = Math.floor(Math.random() * totalImages);

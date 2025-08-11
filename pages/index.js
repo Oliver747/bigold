@@ -3,12 +3,12 @@ import { useState, useEffect } from "react";
 const totalImages = 2000;
 
 export default function Home() {
-  const [history, setHistory] = useState([0]);
+const [history, setHistory] = useState(["#0"]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [imageError, setImageError] = useState(false);
 
   const currentImage = history[currentIndex];
-  const imagePath = `/avatars/${currentImage}.webp`;
+const imagePath = `/avatars/${encodeURIComponent(currentImage)}.webp`;
 
   const handleGenerate = () => {
     const newImage = Math.floor(Math.random() * totalImages);

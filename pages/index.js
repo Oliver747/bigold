@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const totalImages = 16;
+const totalImages = 2000;
 
 export default function Home() {
   const [history, setHistory] = useState([0]);

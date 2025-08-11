@@ -3,12 +3,13 @@ import { useState, useEffect } from "react";
 const totalImages = 2000;
 
 export default function Home() {
-const [history, setHistory] = useState(["#0"]);
+  const [history, setHistory] = useState([0]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [imageError, setImageError] = useState(false);
 
- const currentImage = history[currentIndex];
-const imagePath = `/avatars/%23${currentImage}.webp`;
+  const currentImage = history[currentIndex];
+  // 注意这里用 %23 代替 #
+  const imagePath = `/avatars/%23${currentImage}.webp`;
 
   const handleGenerate = () => {
     const newImage = Math.floor(Math.random() * totalImages);
@@ -18,32 +19,38 @@ const imagePath = `/avatars/%23${currentImage}.webp`;
   };
 
   const handleDownload = () => {
+    if (imageError) {
+      alert("当前图片无法下载，图片未加载成功。");
+      return;
+    }
     const link = document.createElement("a");
     link.href = imagePath;
-    link.download = `avatar_${currentImage}.webp`;
+    link.download = `avatar_#${currentImage}.webp`; // 下载名保留 #
     link.click();
   };
 
   const handlePrev = () => {
     if (currentIndex > 0) {
       setCurrentIndex(currentIndex - 1);
+      setImageError(false);
     }
   };
 
   const handleNext = () => {
     if (currentIndex < history.length - 1) {
       setCurrentIndex(currentIndex + 1);
+      setImageError(false);
     }
   };
 
-    useEffect(() => {
-    document.body.style.margin = "0";
-    document.body.style.padding = "0";
-    document.body.style.overflowX = "hidden";
-    document.documentElement.style.margin = "0";
-    document.documentElement.style.padding = "0";
-  }, []);
-  
+  useEffect(() => {
+    document.body.style.margin = "0";
+    document.body.style.padding = "0";
+    document.body.style.overflowX = "hidden";
+    document.documentElement.style.margin = "0";
+    document.documentElement.style.padding = "0";
+  }, []);
+
   return (
     <div style={styles.page}>
       <div style={styles.container}>
@@ -69,15 +76,23 @@ const imagePath = `/avatars/%23${currentImage}.webp`;
         <div style={styles.subtitle}>Based on Mixin Inscription</div>
 
         <div style={styles.buttonGroup}>
-  <div style={styles.buttonRow}>
-    <button style={styles.button} onClick={handlePrev}>Prev</button>
-    <button style={styles.button} onClick={handleNext}>Next</button>
-  </div>
-  <div style={styles.buttonRow}>
-    <button style={styles.button} onClick={handleGenerate}>Random</button>
-    <button style={styles.button} onClick={handleDownload}>Download</button>
-  </div>
-</div>
+          <div style={styles.buttonRow}>
+            <button style={styles.button} onClick={handlePrev}>
+              Prev
+            </button>
+            <button style={styles.button} onClick={handleNext}>
+              Next
+            </button>
+          </div>
+          <div style={styles.buttonRow}>
+            <button style={styles.button} onClick={handleGenerate}>
+              Random
+            </button>
+            <button style={styles.button} onClick={handleDownload}>
+              Download
+            </button>
+          </div>
+        </div>
       </div>
 
       <footer style={styles.footer}>
@@ -89,24 +104,24 @@ const imagePath = `/avatars/%23${currentImage}.webp`;
 
 const styles = {
   page: {
-   minHeight: "100vh",
-    width: "100vw", // 解决白边
+    minHeight: "100vh",
+    width: "100vw", // 解决白边
     margin: "0", // ✅ 添加这行
-  padding: "0", // ✅ 添加这行
-    overflowX: "hidden", // 防止横向滚动
-      boxsizing:"border-box",
-    display: "flex",
-    flexDirection: "column",
+    padding: "0", // ✅ 添加这行
+    overflowX: "hidden", // 防止横向滚动
+    boxSizing: "border-box",
+    display: "flex",
+    flexDirection: "column",
     justifyContent: "space-between",
     alignItems: "center",
-    background: "linear-gradient(to bottom right, #4878cb, #48c9c7)",
-    fontFamily: "Segoe UI, sans-serif",
-    color: "#ffffff",
-  },
+    background: "linear-gradient(to bottom right, #4878cb, #48c9c7)",
+    fontFamily: "Segoe UI, sans-serif",
+    color: "#ffffff",
+  },
   container: {
     textAlign: "center",
     flexGrow: 1,
-  flex: 1, // 加在 styles.container 中
+    flex: 1, // 加在 styles.container 中
   },
   avatarWrapper: {
     position: "relative",
@@ -116,7 +131,7 @@ const styles = {
   avatar: {
     width: "400px",
     height: "400px",
-    borderRadius: "10px",// ✅ 圆角
+    borderRadius: "10px", // ✅ 圆角
     boxShadow: "0 8px 15px rgba(0,0,0,0.4)",
   },
   cornerLeft: {
@@ -149,19 +164,19 @@ const styles = {
     fontSize: "24px",
     fontWeight: "bold",
     marginTop: "50px",
-    textShadow: "1px 1px 2px rgba(0, 0, 0, 0.3)"
+    textShadow: "1px 1px 2px rgba(0, 0, 0, 0.3)",
   },
   imageId: {
     fontSize: "24px",
     fontWeight: "bold",
     marginLeft: "10px",
-    textShadow: "1px 1px 2px rgba(0, 0, 0, 0.3)"
+    textShadow: "1px 1px 2px rgba(0, 0, 0, 0.3)",
   },
   subtitle: {
     fontSize: "14px",
     marginBottom: "30px",
     marginTop: "5px",
-    textShadow: "1px 1px 2px rgba(0, 0, 0, 0.3)"
+    textShadow: "1px 1px 2px rgba(0, 0, 0, 0.3)",
   },
   buttonRow: {
     display: "flex",
@@ -170,21 +185,21 @@ const styles = {
     marginBottom: "20px",
   },
   button: {
-  flex: "0 0 33%",                            // ✅ 每个按钮宽度一致
-  margin: "0 5px",                    // ✅ 保持间隔
-  padding: "10px 0",                  // ✅ 上下 padding，左右 padding 取消
-  border: "none",
-  borderRadius: "16px",
-  cursor: "pointer",
-  fontSize: "16px",
-  color: "#fff",                      // ✅ 字体白色
-  backgroundColor: "rgba(240,245,250, 0.3)",        // ✅ 默认背景（你也可以自定义）
-  boxShadow: "2px 2px 5px rgba(0,0,0,0.4)", // ✅ 灰色右下阴影
-},
+    flex: "0 0 33%", // ✅ 每个按钮宽度一致
+    margin: "0 5px", // ✅ 保持间隔
+    padding: "10px 0", // ✅ 上下 padding，左右 padding 取消
+    border: "none",
+    borderRadius: "16px",
+    cursor: "pointer",
+    fontSize: "16px",
+    color: "#fff", // ✅ 字体白色
+    backgroundColor: "rgba(240,245,250, 0.3)", // ✅ 默认背景（你也可以自定义）
+    boxShadow: "2px 2px 5px rgba(0,0,0,0.4)", // ✅ 灰色右下阴影
+  },
 
-buttonGroup: {
-  marginTop: "50px", // ← 控制整体向下偏移的距离，自行调大或调小
-},
+  buttonGroup: {
+    marginTop: "50px", // ← 控制整体向下偏移的距离，自行调大或调小
+  },
 
   footer: {
     marginTop: "1px",
